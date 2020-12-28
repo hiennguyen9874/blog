@@ -1,0 +1,73 @@
+{
+  "name": "blog",
+  "author": "@erikdstock",
+  "license": "MIT",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext ts --ext tsx --ext js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.3.1",
+    "@types/react-syntax-highlighter": "^13.5.0",
+    "autoprefixer": "^10.1.0",
+    "clsx": "^1.1.1",
+    "gray-matter": "^4.0.2",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "lazysizes": "^5.3.0-beta1",
+    "lqip-loader": "^2.2.1",
+    "next": "latest",
+    "next-compose-plugins": "^2.2.1",
+    "next-mdx-remote": "^2.0.0",
+    "next-optimized-images": "^2.6.2",
+    "next-seo": "^4.17.0",
+    "next-themes": "0.0.10",
+    "postcss": "^8.2.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "prism-react-renderer": "^1.1.1",
+    "raw-loader": "^4.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^4.1.0",
+    "react-markdown": "^5.0.3",
+    "react-syntax-highlighter": "^15.4.3",
+    "react-toggle-dark-mode": "^1.0.3",
+    "tailwindcss": "^2.0.2",
+    "typeface-merriweather": "^1.1.13",
+    "typeface-open-sans": "^1.1.13",
+    "webp-loader": "^0.6.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^10.0.1",
+    "@types/node": "^13.9.5",
+    "@types/react": "^16.9.27",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
+    "identity-obj-proxy": "^3.0.0",
+    "lint-staged": "^10.0.10",
+    "prettier": "^2.0.2",
+    "typescript": "^3.8.3"
+  }
+}
