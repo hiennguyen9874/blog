@@ -9,7 +9,22 @@
       "siteUrl": "https://nextjs-starter-blog-demo.netlify.app/",
       "language": "en-US",
       "social": {
-        "twitter": "Jose_R_Felix"
+        "twitter": {
+          "username": "hiennguyen9874",
+          "link": "https://twitter.com/Hin16851784"
+        },
+        "facebook": {
+          "usernames": "hiennguyen9874",
+          "link": "https://www.facebook.com/hiennguyen9874/"
+        },
+        "linkedin": {
+          "username": "hiennguyen9874",
+          "link": "https://www.linkedin.com/in/hiennguyen9874/"
+        },
+        "github": {
+          "username": "hiennguyen9874",
+          "link": "https://github.com/hiennguyen9874"
+        }
       }
     }
   }

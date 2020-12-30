@@ -1,1 +1,1 @@
-# TODO: using next-seo
+Nextjs + next-mdx-remote

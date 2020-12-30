@@ -18,9 +18,9 @@ export const Bio: React.FunctionComponent<BioProps> = ({
     <div className={clsx(`flex items-center`, className)}>
       <Image
         className="flex-shrink-0 mb-0 mr-3 rounded-full w-14 h-14"
-        src={require('public/assets/profile.png')}
-        webpSrc={require('public/assets/profile.png?webp')}
-        previewSrc={require('public/assets/profile.png?lqip')}
+        src={require('public/assets/img/profile.png')}
+        webpSrc={require('public/assets/img/profile.png?webp')}
+        previewSrc={require('public/assets/img/profile.png?lqip')}
         alt="Profile"
       />
 

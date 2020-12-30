@@ -1,13 +1,13 @@
 const defaultSans = [
-  "system-ui",
-  "-apple-system",
-  "BlinkMacSystemFont",
+  'system-ui',
+  '-apple-system',
+  'BlinkMacSystemFont',
   '"Segoe UI"',
-  "Roboto",
+  'Roboto',
   '"Helvetica Neue"',
-  "Arial",
+  'Arial',
   '"Noto Sans"',
-  "sans-serif",
+  'sans-serif',
   '"Apple Color Emoji"',
   '"Segoe UI Emoji"',
   '"Segoe UI Symbol"',
@@ -15,111 +15,49 @@ const defaultSans = [
 ];
 
 const defaultSerif = [
-  "Georgia",
-  "Cambria",
+  'Georgia',
+  'Cambria',
   '"Times New Roman"',
-  "Times",
-  "serif",
+  'Times',
+  'serif',
 ];
 
 module.exports = {
   purge: {
-    mode: "all",
+    mode: 'all',
     content: [
-      "./components/**/*.{js,ts,jsx,tsx,css}",
-      "./pages/**/*.{js,ts,jsx,tsx}",
+      './components/**/*.{js,ts,jsx,tsx,css}',
+      './pages/**/*.{js,ts,jsx,tsx}',
     ],
     options: {
       safelist: { deep: [/blur$/] },
     },
   },
-  darkMode: "class",
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        "neon-orange": "#f92300",
+        OxfordBlue: '#2D3748',
+        Mirage: '#1A202C',
+        Alabaster: '#F8F8F8',
+        'neon-orange': '#f92300',
       },
       fontSize: {
-        "7xl": "4.5rem",
+        '7xl': '4.5rem',
       },
       spacing: {
-        14: "3.375rem",
+        14: '3.375rem',
       },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            color: theme("colors.gray.800"),
-            blockquote: {
-              borderLeftColor: theme("colors.gray.700"),
-            },
-            "ol > li::before": {
-              color: theme("colors.gray.700"),
-            },
-            "ul > li::before": {
-              backgroundColor: theme("colors.gray.700"),
-            },
-            a: {
-              color: theme("colors.neon-orange"),
-            },
-          },
-        },
-
-        dark: {
-          css: {
-            color: theme("colors.gray.100"),
-            "ol > li::before": {
-              color: theme("colors.gray.300"),
-            },
-            "ul > li::before": {
-              backgroundColor: theme("colors.gray.300"),
-            },
-            a: {
-              color: theme("colors.yellow.500"),
-            },
-            h1: {
-              color: theme("colors.gray.100"),
-            },
-            h2: {
-              color: theme("colors.gray.100"),
-            },
-            h3: {
-              color: theme("colors.gray.100"),
-            },
-            h4: {
-              color: theme("colors.gray.100"),
-            },
-            h5: {
-              color: theme("colors.gray.100"),
-            },
-            h6: {
-              color: theme("colors.gray.100"),
-            },
-            strong: {
-              color: theme("colors.gray.100"),
-            },
-            code: {
-              color: theme("colors.gray.100"),
-            },
-            figcaption: {
-              color: theme("colors.gray.100"),
-            },
-            blockquote: {
-              color: theme("colors.gray.100"),
-              borderLeftColor: theme("colors.gray.200"),
-            },
-          },
-        },
-      }),
     },
     fontFamily: {
-      display: ["Open Sans", ...defaultSans],
-      body: ["Merriweather", ...defaultSerif],
+      display: ['Open Sans', ...defaultSans],
+      body: ['Merriweather', ...defaultSerif],
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require('@tailwindcss/typography')],
   variants: {
     extend: {
-      typography: ["dark"],
+      typography: ['dark'],
     },
   },
 };
