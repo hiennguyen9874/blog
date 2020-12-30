@@ -7,91 +7,33 @@ import matter from 'gray-matter';
 import renderToString from 'next-mdx-remote/render-to-string';
 import { MdxRemote } from 'next-mdx-remote/types';
 
-// import Image from 'next/image'
-
-// interface BasicProps {
-//   children: React.ReactNode;
-// }
-
-// interface CodeSandBoxProps {
-//   src: string;
-//   title: string;
-// }
-
 export const postComponents = {
-  // a: dynamic(() => import('../components/CustomLink')),
-  // p: ({ children }: BasicProps) => (
-  //   <p className="text-base leading-7 text-justify mb-3">{children}</p>
-  // ),
-  // h1: ({ children }: BasicProps) => (
-  //   <h1 className="font-bold text-4xl">{children}</h1>
-  // ),
-  // h2: ({ children }: BasicProps) => (
-  //   <h2 className="font-bold text-3xl">{children}</h2>
-  // ),
-  // h3: ({ children }: BasicProps) => (
-  //   <h3 className="font-bold text-2xl">{children}</h3>
-  // ),
-  // h4: ({ children }: BasicProps) => (
-  //   <h4 className="font-bold text-xl">{children}</h4>
-  // ),
-  // h5: ({ children }: BasicProps) => (
-  //   <h5 className="font-bold text-lg">{children}</h5>
-  // ),
-  // h6: ({ children }: BasicProps) => (
-  //   <h6 className="font-bold text-base">{children}</h6>
-  // ),
-  // hr: () => <hr className="my-3" />,
-  // blockquote: ({ children }: BasicProps) => {
-  //   return (
-  //     <blockquote className="italic text-2xl border-l-4 -ml-4 pl-3">
-  //       {children}
-  //     </blockquote>
-  //   );
-  // },
-  // ul: ({ children }: BasicProps) => (
-  //   <ul className="list-disc list-inside">{children}</ul>
-  // ),
-  // ol: ({ children }: BasicProps) => (
-  //   <ol className="list-decimal list-inside">{children}</ol>
-  // ),
-  // em: ({ children }: BasicProps) => <span className="italic">{children}</span>,
-  // strong: ({ children }: BasicProps) => (
-  //   <span className="font-bold">{children}</span>
-  // ),
-  // inlineCode: ({ children }: BasicProps) => (
-  //   <code className="bg-bgCodeColor px-1">{children}</code>
-  // ),
-  // InlineCode: ({ children }: BasicProps) => (
-  //   <code className="bg-bgCodeColor px-1">{children}</code>
-  // ),
-  // // img: dynamic(() => import('../components/ImageComponent')),
-  // img: Image,
-  // code: dynamic(() => import('../components/CodeBlock')),
-  // CodeSandBox: ({ src, title }: CodeSandBoxProps) => (
-  //   <iframe
-  //     src={src}
-  //     title={title}
-  //     className="w-full border-0"
-  //     style={{ height: '500px' }}
-  //     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  //     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-  //   />
-  // ),
-  // table: ({ children }: BasicProps) => (
-  //   <table className="table-auto">{children}</table>
-  // ),
-  // th: ({ children }: BasicProps) => <th className="px-4 py-2">{children}</th>,
-  // td: ({ children }: BasicProps) => (
-  //   <td className="border px-4 py-2">{children}</td>
-  // ),
-  // tr: ({ children }: BasicProps) => (
-  //   <tr className="even:bg-gray-100">{children}</tr>
-  // ),
-  // TextCenter: ({ children }: BasicProps) => (
-  //   <div className="text-center">{children}</div>
-  // ),
-  TestComponent: dynamic(() => import('../components/TestComponent')),
+  p: dynamic(() => import('../components/Markdown/Paragraph')),
+  h1: dynamic(() => import('../components/Markdown/Heading1')),
+  h2: dynamic(() => import('../components/Markdown/Heading2')),
+  h3: dynamic(() => import('../components/Markdown/Heading3')),
+  h4: dynamic(() => import('../components/Markdown/Heading4')),
+  h5: dynamic(() => import('../components/Markdown/Heading5')),
+  h6: dynamic(() => import('../components/Markdown/Heading6')),
+  blockquote: dynamic(() => import('../components/Markdown/Blockquote')),
+  ul: dynamic(() => import('../components/Markdown/List')),
+  ol: dynamic(() => import('../components/Markdown/OrderedList')),
+  li: dynamic(() => import('../components/Markdown/ListItem')),
+  table: dynamic(() => import('../components/Markdown/Table')),
+  thead: dynamic(() => import('../components/Markdown/TableHead')),
+  tbody: dynamic(() => import('../components/Markdown/TableBody')),
+  tr: dynamic(() => import('../components/Markdown/TableRow')),
+  th: dynamic(() => import('../components/Markdown/TableCellHead')),
+  td: dynamic(() => import('../components/Markdown/TableCellBody')),
+  code: dynamic(() => import('../components/Markdown/Code')),
+  inlineCode: dynamic(() => import('../components/Markdown/InlineCode')),
+  pre: dynamic(() => import('../components/Markdown/Code')),
+  em: dynamic(() => import('../components/Markdown/Emphasis')),
+  strong: dynamic(() => import('../components/Markdown/Strong')),
+  del: dynamic(() => import('../components/Markdown/Delete')),
+  hr: dynamic(() => import('../components/Markdown/ThematicBreak')),
+  a: dynamic(() => import('../components/Markdown/Link')),
+  img: dynamic(() => import('../components/Markdown/Image')),
 };
 
 const getPostsFolders = (): Array<{

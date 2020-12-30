@@ -6,13 +6,16 @@ import clsx from 'clsx';
 
 interface CodeBlockProps {
   children: any;
-  className: string;
+  className?: string | undefined;
 }
 
 const CodeBlock: React.FunctionComponent<CodeBlockProps> = ({
   children,
   className,
 }: CodeBlockProps) => {
+  if (!className) {
+    return <b>{children}</b>;
+  }
   const language = className.replace(/language-/, '');
   return (
     <Highlight

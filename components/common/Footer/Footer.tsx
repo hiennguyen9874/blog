@@ -7,7 +7,7 @@ import { getSiteMetaData } from '@utils/helpers';
 const Footer: React.FunctionComponent = () => {
   const { social } = getSiteMetaData();
   return (
-    <footer className="bg-white px-6 py-4 shadow dark:border-gray-700 dark:bg-gray-700">
+    <footer className="mt-10 bg-white px-6 py-4 shadow dark:border-gray-700 dark:bg-gray-700">
       <div className="max-w-screen-xl px-24 mx-auto antialiased font-body">
         <div className="flex flex-col container mx-auto md:flex-row md:items-center md:justify-between">
           <div className="text-lg font-light">

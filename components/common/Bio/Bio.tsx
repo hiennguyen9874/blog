@@ -18,18 +18,15 @@ export const Bio: React.FunctionComponent<BioProps> = ({
     <div className={clsx(`flex items-center`, className)}>
       <Image
         className="flex-shrink-0 mb-0 mr-3 rounded-full w-14 h-14"
-        src={require('public/assets/img/profile.png')}
-        webpSrc={require('public/assets/img/profile.png?webp')}
-        previewSrc={require('public/assets/img/profile.png?lqip')}
+        src={require('public/assets/img/profile.jpg')}
+        webpSrc={require('public/assets/img/profile.jpg?webp')}
+        previewSrc={require('public/assets/img/profile.jpg?lqip')}
         alt="Profile"
       />
 
       <p className="text-base leading-7">
         Written by <b className="font-semibold">{author.name}</b>{' '}
-        {author.summary}{' '}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          Follow him on twitter
-        </a>
+        {author.summary} <a href={social.twitter.link}>Follow him on twitter</a>
       </p>
     </div>
   );

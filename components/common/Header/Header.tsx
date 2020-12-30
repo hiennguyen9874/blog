@@ -30,14 +30,14 @@ const Header: React.FunctionComponent = () => {
             <h1>
               <Link href="/">
                 <a className="text-3xl font-bold md:text-4xl text-gray-800 dark:text-gray-200 hover:no-underline">
-                  Next.Js Starter Blog
+                  Blog
                 </a>
               </Link>
             </h1>
           </div>
 
           <div className="md:flex flex-col md:flex-row md:-mx-4 hidden">
-            <div className="my-1md:mx-4 md:my-0">
+            <div className="my-1 md:mx-4 md:my-0">
               <h1>
                 <Link href="#">
                   <a className="text-gray-800 font-semibold hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500 hover:no-underline">
@@ -65,7 +65,7 @@ const Header: React.FunctionComponent = () => {
               </h1>
             </div>
             {mounted && (
-              <div>
+              <div className="my-1 md:mx-4 md:my-0">
                 <DarkModeSwitch
                   checked={isDarkMode}
                   onChange={toggleDarkMode}
