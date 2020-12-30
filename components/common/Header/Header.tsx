@@ -37,33 +37,31 @@ const Header: React.FunctionComponent = () => {
           </div>
 
           <div className="md:flex flex-col md:flex-row md:-mx-4 hidden">
-            <div className="my-1 md:mx-4 md:my-0">
-              <h1>
-                <Link href="#">
-                  <a className="text-gray-800 font-semibold hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500 hover:no-underline">
-                    Home
-                  </a>
-                </Link>
-              </h1>
-            </div>
-            <div className="my-1 md:mx-4 md:my-0">
-              <h1>
-                <Link href="#">
-                  <a className="text-gray-800 font-semibold hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500 hover:no-underline">
-                    About Me
-                  </a>
-                </Link>
-              </h1>
-            </div>
-            <div className="my-1 md:mx-4 md:my-0">
-              <h1>
-                <Link href="#">
-                  <a className="text-gray-800 font-semibold hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500 hover:no-underline">
-                    Contact
-                  </a>
-                </Link>
-              </h1>
-            </div>
+            {[
+              {
+                label: 'Home',
+                url: '/',
+              },
+              {
+                label: 'About Me',
+                url: '#',
+              },
+              {
+                label: 'Contact',
+                url: '#',
+              },
+            ].map(({ label, url }) => (
+              <div className="my-1 md:mx-4 md:my-0" key={url}>
+                <h1>
+                  <Link href={url}>
+                    <a className="text-gray-800 font-semibold hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500 hover:no-underline">
+                      {label}
+                    </a>
+                  </Link>
+                </h1>
+              </div>
+            ))}
+
             {mounted && (
               <div className="my-1 md:mx-4 md:my-0">
                 <DarkModeSwitch
