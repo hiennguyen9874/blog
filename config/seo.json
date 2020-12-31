@@ -1,30 +1,30 @@
 {
-    "siteMetadata": {
-      "title": "Next.js Starter Blog",
-      "author": {
-        "name": "Xuan Hien",
-        "summary": "Who works building clean user interfaces with React"
+  "siteMetadata": {
+    "title": "Next.js Starter Blog",
+    "author": {
+      "name": "Xuan Hien",
+      "summary": "Who works building clean user interfaces with React"
+    },
+    "description": "A blog created with Next.js and Tailwind.css",
+    "siteUrl": "https://nextjs-starter-blog-demo.netlify.app/",
+    "language": "en-US",
+    "social": {
+      "twitter": {
+        "username": "hiennguyen9874",
+        "link": "https://twitter.com/Hin16851784"
       },
-      "description": "A blog created with Next.js and Tailwind.css",
-      "siteUrl": "https://nextjs-starter-blog-demo.netlify.app/",
-      "language": "en-US",
-      "social": {
-        "twitter": {
-          "username": "hiennguyen9874",
-          "link": "https://twitter.com/Hin16851784"
-        },
-        "facebook": {
-          "usernames": "hiennguyen9874",
-          "link": "https://www.facebook.com/hiennguyen9874/"
-        },
-        "linkedin": {
-          "username": "hiennguyen9874",
-          "link": "https://www.linkedin.com/in/hiennguyen9874/"
-        },
-        "github": {
-          "username": "hiennguyen9874",
-          "link": "https://github.com/hiennguyen9874"
-        }
+      "facebook": {
+        "usernames": "hiennguyen9874",
+        "link": "https://www.facebook.com/hiennguyen9874/"
+      },
+      "linkedin": {
+        "username": "hiennguyen9874",
+        "link": "https://www.linkedin.com/in/hiennguyen9874/"
+      },
+      "github": {
+        "username": "hiennguyen9874",
+        "link": "https://github.com/hiennguyen9874"
       }
     }
   }
+}

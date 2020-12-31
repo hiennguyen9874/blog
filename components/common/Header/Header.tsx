@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
+import Search from '../Search/Search';
+
 const Header: React.FunctionComponent = () => {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -34,6 +36,10 @@ const Header: React.FunctionComponent = () => {
                 </a>
               </Link>
             </h1>
+          </div>
+
+          <div>
+            <Search />
           </div>
 
           <div className="flex-col md:flex md:flex-row md:-mx-4 hidden">

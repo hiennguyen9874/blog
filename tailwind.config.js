@@ -1,26 +1,4 @@
-const defaultSans = [
-  'system-ui',
-  '-apple-system',
-  'BlinkMacSystemFont',
-  '"Segoe UI"',
-  'Roboto',
-  '"Helvetica Neue"',
-  'Arial',
-  '"Noto Sans"',
-  'sans-serif',
-  '"Apple Color Emoji"',
-  '"Segoe UI Emoji"',
-  '"Segoe UI Symbol"',
-  '"Noto Color Emoji"',
-];
-
-const defaultSerif = [
-  'Georgia',
-  'Cambria',
-  '"Times New Roman"',
-  'Times',
-  'serif',
-];
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: {
@@ -50,11 +28,17 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: ['Open Sans', ...defaultSans],
-      body: ['Merriweather', ...defaultSerif],
+      san: ['Fira Sans', ...defaultTheme.fontFamily.sans],
+      serif: ['Fira Sans', ...defaultTheme.fontFamily.serif],
+      mono: ['Fira Sans', ...defaultTheme.fontFamily.mono],
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss'),
+    require('precss'),
+    require('autoprefixer'),
+  ],
   variants: {
     extend: {
       typography: ['dark'],

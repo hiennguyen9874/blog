@@ -6,6 +6,6 @@ interface StrongProps {
 
 const Strong: React.FunctionComponent<StrongProps> = ({
   children,
-}: StrongProps) => <strong className="font-bold">{children}</strong>;
+}: StrongProps) => <strong className="font-bold font-san">{children}</strong>;
 
 export default Strong;

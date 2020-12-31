@@ -20,7 +20,7 @@ const Footer: React.FunctionComponent = () => {
           &#128293;
         </div>
 
-        <div className="flex flex-row md:flex-col items-center">
+        <div className="flex flex-row md:flex-col">
           <p className="hidden font-bold md:block">Quick Links</p>
           {[
             {
@@ -48,7 +48,7 @@ const Footer: React.FunctionComponent = () => {
           ))}
         </div>
 
-        <div className="flex flex-row md:flex-col items-center">
+        <div className="flex flex-row md:flex-col">
           <p className="hidden font-bold md:block">Legal Stuff</p>
           {[
             {
@@ -76,7 +76,7 @@ const Footer: React.FunctionComponent = () => {
           ))}
         </div>
 
-        <div className="flex flex-row md:flex-col items-center">
+        <div className="flex flex-row md:flex-col">
           <p className="hidden font-bold md:block">Social Media</p>
           {[
             {

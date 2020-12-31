@@ -2,8 +2,9 @@ import React from 'react';
 import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 
-import '@assets/main.css';
+import ContextProvider from '../Context';
 
+import '@styles/main.scss';
 import 'typeface-open-sans';
 import 'typeface-merriweather';
 
@@ -12,7 +13,9 @@ const MyApp: React.FunctionComponent<AppProps> = ({
   pageProps,
 }: AppProps) => (
   <ThemeProvider defaultTheme="system" enableSystem={true} attribute="class">
-    <Component {...pageProps} />
+    <ContextProvider>
+      <Component {...pageProps} />
+    </ContextProvider>
   </ThemeProvider>
 );
 

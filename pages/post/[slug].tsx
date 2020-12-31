@@ -65,7 +65,7 @@ const PostPage: NextPage<PostPageProps> = ({ posts }: PostPageProps) => {
 
         <div className="flex justify-between container mx-auto">
           <div className="w-full lg:w-8/12">
-            <div className="px-2 py-1 bg-white rounded-xl dark:bg-gray-700">
+            <div className="px-4 py-1 bg-white rounded-xl dark:bg-gray-700">
               <main>{content}</main>
               <hr className="mt-4" />
               <footer>

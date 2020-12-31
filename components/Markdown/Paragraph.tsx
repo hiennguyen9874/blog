@@ -7,7 +7,9 @@ interface ParagraphProps {
 const Paragraph: React.FunctionComponent<ParagraphProps> = ({
   children,
 }: ParagraphProps) => {
-  return <p className="mt-4 text-base leading-7 text-justify mb-3">{children}</p>;
+  return (
+    <p className="mt-4 text-base leading-7 text-justify mb-8">{children}</p>
+  );
 };
 
 export default Paragraph;

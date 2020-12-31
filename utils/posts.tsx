@@ -119,6 +119,42 @@ export const getSortedPosts = async (): Promise<Array<PostType>> => {
   );
 };
 
+export const getAllSearchPost = () => {
+  const postFolders = getPostsFolders();
+
+  const posts = postFolders.map(({ filename, directory }) => {
+    const markdownWithMetadata = fs
+      .readFileSync(`content/posts/${directory}/${filename}`)
+      .toString();
+
+    // Parse markdown, get frontmatter data, excerpt and content.
+    const { content, data, excerpt } = matter(markdownWithMetadata);
+
+    const frontmatter = {
+      title: data.title,
+      description: data.description,
+      date: getFormattedDate(data.date),
+    };
+
+    // Remove .mdx file extension from post name
+    const slug = filename.replace('.mdx', '');
+
+    const { date, ...otherData } = data;
+
+    return {
+      slug,
+      frontmatter,
+      excerpt,
+      content,
+    };
+  });
+  return posts.sort(
+    (a, b) =>
+      Number(new Date(b.frontmatter.date)) -
+      Number(new Date(a.frontmatter.date))
+  );
+};
+
 export const getPostsSlugs = (): {
   params: {
     slug: string;

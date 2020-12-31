@@ -32,7 +32,7 @@ const AboutMePage: NextPage = () => (
                 <h2>My Story</h2>
               </div>
             </div>
-            
+
             <div className="mt-10 bg-white dark:border-gray-700 dark:bg-gray-700 rounded-2xl">
               <div className="px-8 py-4">
                 <p>
@@ -60,7 +60,7 @@ const AboutMePage: NextPage = () => (
                 </ul>
                 <p className="mt-4">
                   Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
+                  typesetting industry. Lorem Ipsum has been the industry&apos;s
                   standard dummy text ever since the 1500s. Fusce odio dolor,
                   rhoncus ac purus id, bibendum malesuada neque.
                 </p>
@@ -117,7 +117,7 @@ const AboutMePage: NextPage = () => (
 
             <div className="mt-10 px-6 py-4 bg-white dark:border-gray-700 dark:bg-gray-700 rounded-2xl">
               <p>
-                A core responsibility of the designer's job is to present
+                A core responsibility of the designer&apos;s job is to present
                 information in a way that is both accessible and memorable.
               </p>
             </div>

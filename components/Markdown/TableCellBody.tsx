@@ -6,6 +6,8 @@ interface TableCellBodyProps {
 
 const TableCellBody: React.FunctionComponent<TableCellBodyProps> = ({
   children,
-}: TableCellBodyProps) => <td className="border px-4 py-2 border-gray-600">{children}</td>;
+}: TableCellBodyProps) => (
+  <td className="border px-4 py-2 border-gray-600">{children}</td>
+);
 
 export default TableCellBody;
