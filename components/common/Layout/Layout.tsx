@@ -12,7 +12,7 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({
 }: LayoutProps) => (
   <div className="w-full min-h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-800 dark:text-white">
     <Header />
-    <div className="max-w-screen-xl px-24 mx-auto antialiased font-body">
+    <div className="max-w-screen-xl px-4 md:px-24 mx-auto antialiased font-body">
       <main>{children}</main>
     </div>
     <Footer />

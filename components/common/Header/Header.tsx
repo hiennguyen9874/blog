@@ -24,7 +24,7 @@ const Header: React.FunctionComponent = () => {
 
   return (
     <nav className="bg-white px-6 py-4 shadow dark:border-gray-700 dark:bg-gray-700">
-      <div className="max-w-screen-xl px-24 mx-auto antialiased font-body">
+      <div className="max-w-screen-xl md:px-24 mx-auto antialiased font-body">
         <div className="flex flex-col container mx-auto md:flex-row md:items-center md:justify-between">
           <div className="">
             <h1>
@@ -36,7 +36,7 @@ const Header: React.FunctionComponent = () => {
             </h1>
           </div>
 
-          <div className="md:flex flex-col md:flex-row md:-mx-4 hidden">
+          <div className="flex-col md:flex md:flex-row md:-mx-4 hidden">
             {[
               {
                 label: 'Home',
@@ -44,7 +44,7 @@ const Header: React.FunctionComponent = () => {
               },
               {
                 label: 'About Me',
-                url: '#',
+                url: '/aboutme',
               },
               {
                 label: 'Contact',

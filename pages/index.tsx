@@ -24,7 +24,7 @@ const Index: NextPage<IndexProps> = ({ posts }: IndexProps) => (
   <>
     <Layout>
       <SEO title="All posts" />
-      <div className="py-8">
+      <div className="py-2 md:py-8">
         <div className="flex justify-between container mx-auto">
           <div className="w-full lg:w-8/12">
             <div className="flex items-center justify-between">

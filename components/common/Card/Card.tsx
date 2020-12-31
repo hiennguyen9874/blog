@@ -37,7 +37,7 @@ const Card: React.FunctionComponent<CardProps> = ({
                 {date}
               </span>
               <Link href="#">
-                <a className="px-2 py-1 font-bold rounded-lg bg-gray-400 text-gray-100 hover:bg-gray-600 dark:hover:bg-gray-400 dark:bg-gray-600 dark:text-white">
+                <a className="px-2 py-1 font-bold rounded-lg bg-gray-400 text-gray-100 hover:bg-gray-600 dark:hover:bg-gray-400 dark:bg-gray-600 dark:text-white hover:no-underline">
                   Design
                 </a>
               </Link>
@@ -56,7 +56,7 @@ const Card: React.FunctionComponent<CardProps> = ({
 
             <div className="flex justify-between items-center mt-4">
               <Link href={hrefPost} as={asPost}>
-                <a className="ml-2 text-blue-600 hover:underline ">Read more</a>
+                <a className="ml-2 text-blue-600 hover:underline">Read more</a>
               </Link>
 
               <div className="mr-2">

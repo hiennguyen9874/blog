@@ -5,7 +5,7 @@ interface ListProps {
 }
 
 const List: React.FunctionComponent<ListProps> = ({ children }: ListProps) => (
-  <ul className="list-disc list-inside">{children}</ul>
+  <ul className="mt-4 list-disc list-inside">{children}</ul>
 );
 
 export default List;
