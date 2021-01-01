@@ -15,7 +15,7 @@ const Search: React.FunctionComponent = () => {
           type="search"
           name="serch"
           placeholder="Search"
-          className="h-10 px-5 pr-10 rounded-2xl text-sm focus:outline-none bg-gray-300 scale-150"
+          className="h-10 px-5 pr-10 rounded-2xl text-sm focus:outline-none bg-gray-300 scale-150 text-white"
           autoComplete="off"
           onClick={(): void => {
             searchDispatch({

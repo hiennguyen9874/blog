@@ -1,7 +1,6 @@
 /* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import fs from 'fs';
-import React from 'react';
 import dynamic from 'next/dynamic';
 import matter from 'gray-matter';
 import renderToString from 'next-mdx-remote/render-to-string';
@@ -97,8 +96,8 @@ export const getSortedPosts = async (): Promise<Array<PostType>> => {
       const mdxSource = await renderToString(content, {
         components: postComponents,
         mdxOptions: {
-          remarkPlugins: [],
-          rehypePlugins: [],
+          remarkPlugins: [require('remark-math')],
+          rehypePlugins: [require('rehype-katex')],
         },
         scope: otherData,
       });

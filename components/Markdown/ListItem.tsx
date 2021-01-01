@@ -6,8 +6,6 @@ interface ListItemProps {
 
 const ListItem: React.FunctionComponent<ListItemProps> = ({
   children,
-}: ListItemProps) => {
-  return <li>{children}</li>;
-};
+}: ListItemProps) => <li>{children}</li>;
 
 export default ListItem;

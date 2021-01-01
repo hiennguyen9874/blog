@@ -7,7 +7,7 @@ interface Heading6Props {
 const Heading6: React.FunctionComponent<Heading6Props> = ({
   children,
 }: Heading6Props) => (
-  <h6 className="font-bold text-base text-gray-700 dark:text-gray-200">
+  <h6 className="font-bold text-base text-gray-700 dark:text-gray-200 mb-3">
     {children}
   </h6>
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import Highlight, { defaultProps, Prism } from 'prism-react-renderer';
 import dracula from 'prism-react-renderer/themes/dracula';
 
 import clsx from 'clsx';
@@ -7,22 +7,25 @@ import clsx from 'clsx';
 interface CodeBlockProps {
   children: any;
   className?: string | undefined;
+  live: string;
 }
 
-const CodeBlock: React.FunctionComponent<CodeBlockProps> = ({
-  children,
-  className,
-}: CodeBlockProps) => {
-  if (!className) {
-    return <b>{children}</b>;
-  }
-  const language = className.replace(/language-/, '');
+const CodeBlock: React.FunctionComponent<CodeBlockProps> = (
+  props: CodeBlockProps
+) => {
+  const className = props.children.props.className || '';
+  const matches = className.match(/language-(?<lang>.*)/);
+
   return (
     <Highlight
       {...defaultProps}
       theme={dracula}
-      code={children}
-      language={language as any}
+      code={props.children.props.children}
+      language={
+        matches && matches.groups && matches.groups.lang
+          ? matches.groups.lang
+          : ''
+      }
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
