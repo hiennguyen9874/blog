@@ -9,18 +9,20 @@
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
-    "lint": "eslint . --ext ts --ext tsx"
+    "lint": "eslint . --ext ts --ext tsx",
+    "cache": "node scripts/cache.js"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run type-check"
+      "pre-push": "npm run type-check",
+      "cache": "npm run cache"
     }
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
-      "yarn lint",
-      "yarn format"
+      "npm run lint",
+      "npm run format"
     ]
   },
   "dependencies": {
