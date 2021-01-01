@@ -5,7 +5,7 @@ import { Layout, SEO } from '@components/common';
 
 const AboutMePage: NextPage = () => (
   <Layout>
-    <SEO title="All posts" />
+    <SEO title="About Me" />
     <div className="py-2 md:py-8">
       <div className="mt-10">
         <p className="text-6xl font-semibold text-gray-800 leading-tight dark:text-white">
