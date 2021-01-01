@@ -3,7 +3,7 @@ import React, {
   useRef,
   useState,
   KeyboardEvent,
-  useLayoutEffect,
+  useEffect,
 } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -23,7 +23,7 @@ const SearchDialog: React.FunctionComponent = () => {
 
   const searchEndpoint = (query: string): string => `/api/search?q=${query}`;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     inputRef.current.focus();
   });
 
