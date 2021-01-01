@@ -107,7 +107,7 @@ const SearchDialog: React.FunctionComponent = () => {
             type="search"
             name="search"
             placeholder="Search"
-            className="block w-full h-14 px-4 pr-10 text-lg focus:outline-none shadow-lg rounded-xl bg-gray-400 placeholder-white dark:bg-gray-500"
+            className="block w-full h-14 px-4 pr-10 text-lg focus:outline-none shadow-lg rounded-xl bg-gray-400 text-white placeholder-white dark:bg-gray-500"
             autoComplete="off"
             autoFocus
             ref={inputRef}
