@@ -36,7 +36,7 @@ const Footer: React.FunctionComponent = () => {
               url: '#',
             },
           ].map(({ label, url }) => (
-            <div className="" key={url}>
+            <div className="" key={`${label}_${url}`}>
               <h1>
                 <Link href={url}>
                   <a className="flex text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500 hover:no-underline">
@@ -64,7 +64,7 @@ const Footer: React.FunctionComponent = () => {
               url: '#',
             },
           ].map(({ label, url }) => (
-            <div className="block" key={url}>
+            <div className="block" key={`${label}_${url}`}>
               <h1>
                 <Link href={url}>
                   <a className="flex text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500 hover:no-underline">
@@ -95,7 +95,7 @@ const Footer: React.FunctionComponent = () => {
               url: social.linkedin.link,
             },
           ].map(({ label, src, url }) => (
-            <div className="block" key={url}>
+            <div className="block" key={`${label}_${url}`}>
               <h1>
                 <Link href={url}>
                   <a className="flex text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500 hover:no-underline">
