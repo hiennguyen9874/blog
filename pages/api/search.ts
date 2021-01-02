@@ -14,13 +14,12 @@ interface RDataType {
 }
 
 export default (req: NextApiRequest, res: NextApiResponse<RDataType>): void => {
-  const result = req.query.q
-    ? posts.filter((post) =>
-        post.frontmatter.title.toLowerCase().includes(req.query.q),
-      )
-    : [];
-
   res.status(200);
   res.setHeader('Content-Type', 'application/json');
+  const result = req.query.q
+    ? posts.filter((post) =>
+        post.frontmatter.title.toLowerCase().includes(req.query.q as string),
+      )
+    : [];
   res.end(JSON.stringify({ result }));
 };

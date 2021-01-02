@@ -36,20 +36,27 @@ const CodeBlock: React.FunctionComponent<CodeBlockProps> = (
           style={style}
         >
           {tokens.map((line, i) => {
+            if (i < tokens.length - 1) {
+              const { className, ...rest } = getLineProps({ line, key: i });
+              return (
+                // eslint-disable-next-line react/no-array-index-key
+                <div key={i} className={clsx('table-row', className)} {...rest}>
+                  <span className="table-cell text-right pr-4 select-none opacity-50">
+                    {i + 1}|
+                  </span>
+                  <span className="table-cell">
+                    {line.map((token, key) => (
+                      // eslint-disable-next-line react/no-array-index-key
+                      <span key={key} {...getTokenProps({ token, key })} />
+                    ))}
+                  </span>
+                </div>
+              );
+            }
             const { className, ...rest } = getLineProps({ line, key: i });
             return (
               // eslint-disable-next-line react/no-array-index-key
-              <div key={i} className={clsx('table-row', className)} {...rest}>
-                <span className="table-cell text-right pr-4 select-none opacity-50">
-                  {i + 1}|
-                </span>
-                <span className="table-cell">
-                  {line.map((token, key) => (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <span key={key} {...getTokenProps({ token, key })} />
-                  ))}
-                </span>
-              </div>
+              <div key={i} className={clsx('table-row', className)} {...rest} />
             );
           })}
         </pre>

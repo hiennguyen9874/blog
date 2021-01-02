@@ -42,6 +42,8 @@ const getAllSearchPost = () => {
       title: data.title,
       description: data.description,
       date: getFormattedDate(data.date),
+      thumbnail: data.thumbnail,
+      tag: data.tag.split(','),
     };
 
     // Remove .mdx file extension from post name

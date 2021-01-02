@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 
-import { Layout, Seo } from '@components/common';
+import { Layout, Seo, PublicImage2 } from '@components/common';
 
 const AboutMePage: NextPage = () => (
   <Layout>
@@ -17,10 +17,10 @@ const AboutMePage: NextPage = () => (
 
         <div className="mt-8 flex flex-wrap justify-center">
           <div className="py-4">
-            <img
+            <PublicImage2
+              className="shadow rounded-xl max-w-full h-auto align-middle border-none"
               src="/assets/img/aboutme.jpg"
               alt="aboutme"
-              className="shadow rounded-xl max-w-full h-auto align-middle border-none"
             />
           </div>
         </div>

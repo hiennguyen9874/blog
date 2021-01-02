@@ -8,7 +8,7 @@ interface OrderedListProps {
 const OrderedList: React.FunctionComponent<OrderedListProps> = ({
   children,
 }: OrderedListProps) => (
-  <ol className="list-decimal list-inside px-8">{children}</ol>
+  <ol className="list-decimal list-inside px-8 space-y-1">{children}</ol>
 );
 
 export default OrderedList;

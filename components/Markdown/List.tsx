@@ -6,7 +6,7 @@ interface ListProps {
 }
 
 const List: React.FunctionComponent<ListProps> = ({ children }: ListProps) => (
-  <ul className="mt-4 list-disc list-inside px-8">{children}</ul>
+  <ul className="mt-2 list-disc list-inside px-8 space-y-1">{children}</ul>
 );
 
 export default List;

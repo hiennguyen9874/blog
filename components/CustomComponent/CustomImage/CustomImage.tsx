@@ -16,16 +16,19 @@ const CustomImage: React.FunctionComponent<CustomImageProps> = ({
   alt,
   width,
   height,
-}: CustomImageProps) => (
-  <div className="flex justify-center py-4">
-    <Image
-      className="relative rounded-xl border shadow-md"
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-    />
-  </div>
-);
+}: CustomImageProps) => {
+  const srcFormatted = src[0] === '/' ? src.slice(1) : src;
+  return (
+    <div className="flex justify-center py-4">
+      <Image
+        className="relative rounded-xl border shadow-md"
+        src={`/${srcFormatted}`}
+        alt={alt}
+        width={width}
+        height={height}
+      />
+    </div>
+  );
+};
 
 export default CustomImage;

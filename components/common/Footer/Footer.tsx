@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
+import PublicImage from '@components/common/PublicImage';
 import { getSiteMetaData } from '@utils/helpers';
 
 const Footer: React.FunctionComponent = () => {
@@ -81,17 +81,17 @@ const Footer: React.FunctionComponent = () => {
           {[
             {
               label: 'Facebook',
-              src: '/assets/img/facebook.svg',
+              src: 'assets/img/facebook.svg',
               url: social.facebook.link,
             },
             {
               label: 'Github',
-              src: '/assets/img/github.svg',
+              src: 'assets/img/github.svg',
               url: social.github.link,
             },
             {
               label: 'Linkedin',
-              src: '/assets/img/linkedin.svg',
+              src: 'assets/img/linkedin.svg',
               url: social.linkedin.link,
             },
           ].map(({ label, src, url }) => (
@@ -100,11 +100,12 @@ const Footer: React.FunctionComponent = () => {
                 <Link href={url}>
                   <a className="flex text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500 hover:no-underline">
                     <div className="flex space-x-1">
-                      <Image
+                      <PublicImage
                         className="inline-block"
                         src={src}
                         width={20}
                         height={20}
+                        alt={label}
                       />
                       <div className="inline-block">{label}</div>
                     </div>

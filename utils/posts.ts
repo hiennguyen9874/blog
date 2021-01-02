@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable react/display-name */
@@ -47,6 +49,15 @@ export const postComponents = {
   ),
 };
 
+export interface FrontMatterType {
+  title: string;
+  description: string;
+  date: string;
+  thumbnail: string;
+  tag: string[];
+  timeReading: number;
+}
+
 const getPostsFolders = (): Array<{
   directory: string;
   filename: string;
@@ -72,15 +83,20 @@ const getFormattedDate = (date: Date): string => {
 
 export interface PostType {
   slug: string;
-  frontmatter: {
-    title: any;
-    description: any;
-    date: string;
-  };
+  frontmatter: FrontMatterType;
   excerpt: string;
   content: string;
   source: MdxRemote.Source;
 }
+
+const getFrontMatter = (data: { [key: string]: any }): FrontMatterType => ({
+  title: data.title,
+  description: data.description,
+  date: getFormattedDate(data.date),
+  thumbnail: data.thumbnail,
+  tag: data.tag.split(','),
+  timeReading: data.timeReading,
+});
 
 export const getSortedPosts = async (): Promise<Array<PostType>> => {
   const postFolders = getPostsFolders();
@@ -94,11 +110,7 @@ export const getSortedPosts = async (): Promise<Array<PostType>> => {
       // Parse markdown, get frontmatter data, excerpt and content.
       const { content, data, excerpt } = matter(markdownWithMetadata);
 
-      const frontmatter = {
-        title: data.title,
-        description: data.description,
-        date: getFormattedDate(data.date),
-      };
+      const frontmatter = getFrontMatter(data);
 
       // Remove .mdx file extension from post name
       const slug = filename.replace('.mdx', '');
@@ -133,11 +145,7 @@ export const getSortedPosts = async (): Promise<Array<PostType>> => {
 
 export const getAllSearchPost = (): Array<{
   slug: string;
-  frontmatter: {
-    title: any;
-    description: any;
-    date: string;
-  };
+  frontmatter: FrontMatterType;
   excerpt: string;
   content: string;
 }> => {
@@ -151,11 +159,7 @@ export const getAllSearchPost = (): Array<{
     // Parse markdown, get frontmatter data, excerpt and content.
     const { content, data, excerpt } = matter(markdownWithMetadata);
 
-    const frontmatter = {
-      title: data.title,
-      description: data.description,
-      date: getFormattedDate(data.date),
-    };
+    const frontmatter = getFrontMatter(data);
 
     // Remove .mdx file extension from post name
     const slug = filename.replace('.mdx', '');
@@ -191,11 +195,7 @@ export const getPostsSlugs = (): {
 };
 
 export interface PostDataType {
-  frontmatter: {
-    title: string;
-    description: string;
-    date: string;
-  };
+  frontmatter: FrontMatterType;
   post: {
     content: string;
     excerpt: string;
@@ -203,21 +203,13 @@ export interface PostDataType {
   };
   previousPost: {
     slug: string;
-    frontmatter: {
-      title: any;
-      description: any;
-      date: string;
-    };
+    frontmatter: FrontMatterType;
     excerpt: string;
     content: string;
   };
   nextPost: {
     slug: string;
-    frontmatter: {
-      title: any;
-      description: any;
-      date: string;
-    };
+    frontmatter: FrontMatterType;
     excerpt: string;
     content: string;
   };

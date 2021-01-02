@@ -32,19 +32,30 @@ const Index: NextPage<IndexProps> = ({ posts }: IndexProps) => (
               </div>
             </div>
             {posts.map(
-              ({ frontmatter: { title, description, date }, slug }) => (
+              ({
+                frontmatter: {
+                  title,
+                  description,
+                  date,
+                  thumbnail,
+                  tag,
+                  timeReading,
+                },
+                slug,
+              }) => (
                 <div
                   key={slug}
                   className="mt-6 hover:-translate-y-1 active:translate-y-0"
                 >
                   <Card
-                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     title={title}
-                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     description={description}
                     date={date}
+                    thumbnail={thumbnail}
                     hrefPost="/post/[slug]"
                     asPost={`/post/${slug}`}
+                    tags={tag}
+                    timeReading={timeReading}
                   />
                 </div>
               ),

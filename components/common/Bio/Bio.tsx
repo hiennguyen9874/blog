@@ -4,7 +4,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import Image from '@components/common/Image';
+import PublicImage from '@components/common/PublicImage';
 import { getSiteMetaData } from '@utils/helpers';
 
 interface BioProps {
@@ -16,13 +16,15 @@ const Bio: React.FunctionComponent<BioProps> = ({ className }: BioProps) => {
 
   return (
     <div className={clsx(`flex items-center`, className)}>
-      <Image
-        className="flex-shrink-0 mb-0 mr-3 rounded-full w-14 h-14"
-        src={require('public/assets/img/profile.jpg')}
-        webpSrc={require('public/assets/img/profile.jpg?webp')}
-        previewSrc={require('public/assets/img/profile.jpg?lqip')}
-        alt="Profile"
-      />
+      <div className="mb-0 mr-3">
+        <PublicImage
+          className="flex-shrink-0 rounded-full w-14 h-14"
+          src="assets/img/profile.jpg"
+          width={54}
+          height={54}
+          alt="Profile"
+        />
+      </div>
 
       <p className="text-base leading-7">
         Written by <b className="font-semibold">{author.name}</b>{' '}

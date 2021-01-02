@@ -1,5 +1,9 @@
 import SiteConfig from '@config/seo.json';
 
-// eslint-disable-next-line import/prefer-default-export
 export const getSiteMetaData = (): typeof SiteConfig.siteMetadata =>
   SiteConfig.siteMetadata;
+
+export const getPublicPathImage = (src: string): string => {
+  const srcFormatted = src[0] === '/' ? src.slice(1) : src;
+  return `public/${srcFormatted}`;
+};
