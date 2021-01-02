@@ -22,6 +22,15 @@
       "@Context/*": ["Context/*"]
     }
   },
-  "exclude": ["node_modules", ".next", "out", "next.config.js"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "scripts"],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out",
+    "cache",
+    "next.config.js",
+    "webpack.config.js",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ]
 }

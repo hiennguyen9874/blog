@@ -9,7 +9,7 @@ interface ImageProps {
   className: string;
 }
 
-export const Image: React.FunctionComponent<ImageProps> = ({
+const Image: React.FunctionComponent<ImageProps> = ({
   alt,
   src,
   previewSrc,
@@ -22,3 +22,5 @@ export const Image: React.FunctionComponent<ImageProps> = ({
     <img className={`lazyload blur ${className}`} alt={alt} src={previewSrc} />
   </picture>
 );
+
+export default Image;

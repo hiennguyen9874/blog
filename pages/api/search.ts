@@ -1,5 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { NextApiRequest, NextApiResponse } from 'next';
+
 import { getAllSearchPost } from '@utils/posts';
+
 import * as cache from '../../cache/data';
 
 const posts =
@@ -12,7 +16,7 @@ interface RDataType {
 export default (req: NextApiRequest, res: NextApiResponse<RDataType>): void => {
   const result = req.query.q
     ? posts.filter((post) =>
-        post.frontmatter.title.toLowerCase().includes(req.query.q)
+        post.frontmatter.title.toLowerCase().includes(req.query.q),
       )
     : [];
 

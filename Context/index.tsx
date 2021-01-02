@@ -1,4 +1,3 @@
-import search from 'pages/api/search';
 import React, { ReactChild, ReactChildren, FunctionComponent } from 'react';
 
 import { SearchProvider } from './Search';

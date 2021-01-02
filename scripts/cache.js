@@ -1,5 +1,10 @@
-const fs = require('fs');
-const matter = require('gray-matter');
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import fs from 'fs';
+
+import matter from 'gray-matter';
 
 const getPostsFolders = () => {
   // Get all posts folders located in `content/posts`
@@ -51,13 +56,12 @@ const getAllSearchPost = () => {
   return posts.sort(
     (a, b) =>
       Number(new Date(b.frontmatter.date)) -
-      Number(new Date(a.frontmatter.date))
+      Number(new Date(a.frontmatter.date)),
   );
 };
 
-const postData = () => {
-  return `export const posts = ${JSON.stringify(getAllSearchPost())}`;
-};
+const postData = () =>
+  `export const posts = ${JSON.stringify(getAllSearchPost())}`;
 
 try {
   fs.readdirSync('cache');
@@ -66,5 +70,5 @@ try {
 }
 
 fs.writeFile('cache/data.js', postData(), (err) => {
-  if (err) return console.log(err);
+  if (err) throw Error('Error when write data into cache file!');
 });

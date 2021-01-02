@@ -118,4 +118,5 @@ const Footer: React.FunctionComponent = () => {
     </footer>
   );
 };
+
 export default Footer;

@@ -7,21 +7,25 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc --pretty --noEmit",
+    "check:type": "tsc  --project tsconfig.json -pretty --noEmit",
+    "lint:es": "eslint . --ext ts,tsx,js",
+    "lint:fix": "eslint . --ext ts,tsx,js --fix",
+    "lint:style": "stylelint 'src/**/styled.ts' 'src/**/*.tsx'",
+    "lint": "yarn lint:es && yarn lint:style",
     "format": "prettier --write .",
-    "lint": "eslint . --ext ts --ext tsx",
     "cache": "node scripts/cache.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn run type-check"
+      "pre-commit": "yarn lint-staged && yarn check:type"
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx)": [
-      "yarn lint",
-      "yarn format"
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --cache"
+    ],
+    "styled.ts": [
+      "stylelint --cache"
     ]
   },
   "dependencies": {
@@ -32,6 +36,7 @@
     "autoprefixer": "^10.1.0",
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
+    "eslint-import-resolver-typescript": "^2.3.0",
     "expo-dark-mode-switch": "0.0.1",
     "gray-matter": "^4.0.2",
     "imagemin-mozjpeg": "^9.0.0",
@@ -74,13 +79,24 @@
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
-    "eslint": "^7.16.0",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "^7.1.0",
-    "eslint-plugin-react": "^7.19.0",
-    "husky": "^4.2.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "4.0.0",
+    "husky": "^4.3.6",
     "identity-obj-proxy": "^3.0.0",
-    "lint-staged": "^10.0.10",
+    "lint-staged": "^10.5.3",
     "prettier": "^2.0.2",
+    "stylelint": "^13.8.0",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^4.1.3"
   }
 }

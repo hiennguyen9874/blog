@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    ".eslintrc.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+  ],
+  "exclude": [
+    "cache",
+    "node_modules",
+    ".next",
+    "out",
+    "next.config.js",
+    "webpack.config.js",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ]
+}

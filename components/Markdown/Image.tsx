@@ -8,12 +8,10 @@ interface CustomImageProps {
 const CustomImage: React.FunctionComponent<CustomImageProps> = ({
   src,
   alt,
-}: CustomImageProps) => {
-  return (
-    <div className="flex justify-center py-4">
-      <img src={src} alt={alt} className="rounded-xl border shadow-md" />
-    </div>
-  );
-};
+}: CustomImageProps) => (
+  <div className="flex justify-center py-4">
+    <img src={src} alt={alt} className="rounded-xl border shadow-md" />
+  </div>
+);
 
 export default CustomImage;

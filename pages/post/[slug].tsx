@@ -3,7 +3,7 @@ import { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import hydrate from 'next-mdx-remote/hydrate';
 
-import { Bio, Layout, SEO } from '@components/common';
+import { Bio, Layout, Seo } from '@components/common';
 import {
   getPostBySlug,
   getPostsSlugs,
@@ -28,11 +28,11 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
         posts: postData,
       },
     };
-  } else {
-    throw Error(`Invalid slug: ${slug}`);
   }
+  throw Error(`Invalid slug`);
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getPostsSlugs();
 
@@ -51,7 +51,7 @@ const PostPage: NextPage<PostPageProps> = ({ posts }: PostPageProps) => {
   const content = hydrate(post.source, { components: postComponents });
   return (
     <Layout>
-      <SEO title={frontmatter.title} description={frontmatter.description} />
+      <Seo title={frontmatter.title} description={frontmatter.description} />
 
       <div className="py-8">
         <div className="mt-10">
@@ -74,7 +74,7 @@ const PostPage: NextPage<PostPageProps> = ({ posts }: PostPageProps) => {
 
               <nav className="flex flex-row justify-between mb-10">
                 {previousPost ? (
-                  <Link href={'/post/[slug]'} as={`/post/${previousPost.slug}`}>
+                  <Link href="/post/[slug]" as={`/post/${previousPost.slug}`}>
                     <a className="text-lg font-bold">
                       ← {previousPost.frontmatter.title}
                     </a>
@@ -83,7 +83,7 @@ const PostPage: NextPage<PostPageProps> = ({ posts }: PostPageProps) => {
                   <div />
                 )}
                 {nextPost ? (
-                  <Link href={'/post/[slug]'} as={`/post/${nextPost.slug}`}>
+                  <Link href="/post/[slug]" as={`/post/${nextPost.slug}`}>
                     <a className="text-lg font-bold">
                       {nextPost.frontmatter.title} →
                     </a>

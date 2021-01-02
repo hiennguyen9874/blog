@@ -12,7 +12,7 @@ const MyApp: React.FunctionComponent<AppProps> = ({
   Component,
   pageProps,
 }: AppProps) => (
-  <ThemeProvider defaultTheme="system" enableSystem={true} attribute="class">
+  <ThemeProvider defaultTheme="system" enableSystem attribute="class">
     <ContextProvider>
       <Component {...pageProps} />
     </ContextProvider>

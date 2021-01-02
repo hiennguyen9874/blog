@@ -1,17 +1,20 @@
+/* eslint-disable no-shadow */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
-import Highlight, { defaultProps, Prism } from 'prism-react-renderer';
+import Highlight, { defaultProps } from 'prism-react-renderer';
 import dracula from 'prism-react-renderer/themes/dracula';
-
 import clsx from 'clsx';
 
 interface CodeBlockProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;
-  className?: string | undefined;
-  live: string;
 }
 
 const CodeBlock: React.FunctionComponent<CodeBlockProps> = (
-  props: CodeBlockProps
+  props: CodeBlockProps,
 ) => {
   const className = props.children.props.className || '';
   const matches = className.match(/language-(?<lang>.*)/);
@@ -35,12 +38,14 @@ const CodeBlock: React.FunctionComponent<CodeBlockProps> = (
           {tokens.map((line, i) => {
             const { className, ...rest } = getLineProps({ line, key: i });
             return (
+              // eslint-disable-next-line react/no-array-index-key
               <div key={i} className={clsx('table-row', className)} {...rest}>
                 <span className="table-cell text-right pr-4 select-none opacity-50">
                   {i + 1}|
                 </span>
                 <span className="table-cell">
                   {line.map((token, key) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <span key={key} {...getTokenProps({ token, key })} />
                   ))}
                 </span>

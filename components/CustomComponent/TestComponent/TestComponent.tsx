@@ -5,11 +5,15 @@ interface TestComponentProps {
 }
 
 const TestComponent: React.FunctionComponent<TestComponentProps> = ({
-  name = 'world',
+  name,
 }: TestComponentProps) => (
   <>
-    <div>Hello, {name}!</div>
+    <div>Hello,{name}!</div>
   </>
 );
+
+TestComponent.defaultProps = {
+  name: 'name',
+};
 
 export default TestComponent;

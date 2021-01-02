@@ -1,9 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { GetStaticPropsResult, NextPage } from 'next';
-import Link from 'next/link';
 
-import { Layout, Bio, SEO, Card } from '@components/common';
-
+import { Layout, Seo, Card } from '@components/common';
 import { getSortedPosts, PostType } from '@utils/posts';
 
 interface IndexProps {
@@ -23,7 +22,7 @@ export async function getStaticProps(): Promise<
 const Index: NextPage<IndexProps> = ({ posts }: IndexProps) => (
   <>
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Home" />
       <div className="py-2 md:py-8">
         <div className="flex justify-between container mx-auto">
           <div className="w-full lg:w-8/12">
@@ -39,14 +38,16 @@ const Index: NextPage<IndexProps> = ({ posts }: IndexProps) => (
                   className="mt-6 hover:-translate-y-1 active:translate-y-0"
                 >
                   <Card
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     title={title}
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     description={description}
                     date={date}
-                    hrefPost={'/post/[slug]'}
+                    hrefPost="/post/[slug]"
                     asPost={`/post/${slug}`}
                   />
                 </div>
-              )
+              ),
             )}
             <div className="mt-8">
               <div className="flex">

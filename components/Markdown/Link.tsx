@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 interface CustomLinkProps {
   href: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;
 }
 

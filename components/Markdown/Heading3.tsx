@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface Heading3Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;
 }
 

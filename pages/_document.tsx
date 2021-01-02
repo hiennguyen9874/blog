@@ -4,7 +4,7 @@ import Document, { Head, Main, NextScript, Html } from 'next/document';
 import { getSiteMetaData } from '@utils/helpers';
 
 export default class MyDocument extends Document {
-  render() {
+  render(): JSX.Element {
     const siteMetadata = getSiteMetaData();
 
     return (

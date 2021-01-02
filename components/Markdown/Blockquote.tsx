@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface BlockquoteProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;
 }
 

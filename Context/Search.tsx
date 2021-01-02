@@ -26,19 +26,21 @@ const initialSearch: InitialSearchType = {
 
 const SearchStateContext = createContext<InitialSearchType | null>(null);
 const SearchDispatchContext = createContext<Dispatch<SearchActionTypes> | null>(
-  null
+  null,
 );
 
 function searchReducer(
   state = initialSearch,
-  action: SearchActionTypes
+  action: SearchActionTypes,
 ): InitialSearchType {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { type, payload } = action;
 
   switch (type) {
     case SET_ON_SEARCH: {
       return {
         ...state,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         onSearching: payload,
       };
     }

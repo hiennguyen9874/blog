@@ -1,10 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import fs from 'fs';
+
 import dynamic from 'next/dynamic';
 import matter from 'gray-matter';
 import renderToString from 'next-mdx-remote/render-to-string';
 import { MdxRemote } from 'next-mdx-remote/types';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 export const postComponents = {
   p: dynamic(() => import('../components/Markdown/Paragraph')),
@@ -91,13 +96,14 @@ export const getSortedPosts = async (): Promise<Array<PostType>> => {
       // Remove .mdx file extension from post name
       const slug = filename.replace('.mdx', '');
 
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { date, ...otherData } = data;
 
       const mdxSource = await renderToString(content, {
         components: postComponents,
         mdxOptions: {
-          remarkPlugins: [require('remark-math')],
-          rehypePlugins: [require('rehype-katex')],
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         scope: otherData,
       });
@@ -109,16 +115,25 @@ export const getSortedPosts = async (): Promise<Array<PostType>> => {
         content,
         source: mdxSource,
       };
-    })
+    }),
   );
   return posts.sort(
     (a, b) =>
       Number(new Date(b.frontmatter.date)) -
-      Number(new Date(a.frontmatter.date))
+      Number(new Date(a.frontmatter.date)),
   );
 };
 
-export const getAllSearchPost = () => {
+export const getAllSearchPost = (): Array<{
+  slug: string;
+  frontmatter: {
+    title: any;
+    description: any;
+    date: string;
+  };
+  excerpt: string;
+  content: string;
+}> => {
   const postFolders = getPostsFolders();
 
   const posts = postFolders.map(({ filename, directory }) => {
@@ -138,8 +153,6 @@ export const getAllSearchPost = () => {
     // Remove .mdx file extension from post name
     const slug = filename.replace('.mdx', '');
 
-    const { date, ...otherData } = data;
-
     return {
       slug,
       frontmatter,
@@ -150,7 +163,7 @@ export const getAllSearchPost = () => {
   return posts.sort(
     (a, b) =>
       Number(new Date(b.frontmatter.date)) -
-      Number(new Date(a.frontmatter.date))
+      Number(new Date(a.frontmatter.date)),
   );
 };
 

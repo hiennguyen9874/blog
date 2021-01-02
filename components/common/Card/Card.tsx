@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
+
 import { getSiteMetaData } from '@utils/helpers';
 
 interface CardProps {
@@ -17,7 +19,7 @@ const Card: React.FunctionComponent<CardProps> = ({
   hrefPost,
   asPost,
 }: CardProps) => {
-  const { author, social } = getSiteMetaData();
+  const { author } = getSiteMetaData();
 
   return (
     <div className="transform duration-300 group container hover:-translate-y-2 active:translate-y-0 max-w-4xl bg-white rounded-xl shadow-md overflow-hidden md:max-w-4xl dark:bg-gray-700 active:translate-y-0">
@@ -83,4 +85,4 @@ const Card: React.FunctionComponent<CardProps> = ({
   );
 };
 
-export { Card };
+export default Card;

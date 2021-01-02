@@ -1,17 +1,17 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
-
 import clsx from 'clsx';
 
-import { Image } from '@components/common/Image';
+import Image from '@components/common/Image';
 import { getSiteMetaData } from '@utils/helpers';
 
 interface BioProps {
   className: string;
 }
 
-export const Bio: React.FunctionComponent<BioProps> = ({
-  className,
-}: BioProps) => {
+const Bio: React.FunctionComponent<BioProps> = ({ className }: BioProps) => {
   const { author, social } = getSiteMetaData();
 
   return (
@@ -31,3 +31,4 @@ export const Bio: React.FunctionComponent<BioProps> = ({
     </div>
   );
 };
+export default Bio;

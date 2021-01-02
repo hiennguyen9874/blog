@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
 import clsx from 'clsx';
+
+import { useSearchState } from '@Context/Search';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import SearchDialog from '../SearchDialog/SearchDialog';
 
-import { useSearchState } from '@Context/Search';
-
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-export const Layout: React.FunctionComponent<LayoutProps> = ({
+const Layout: React.FunctionComponent<LayoutProps> = ({
   children,
 }: LayoutProps) => {
   const { onSearching } = useSearchState();
@@ -40,3 +39,5 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({
     </>
   );
 };
+
+export default Layout;

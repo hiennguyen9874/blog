@@ -3,15 +3,15 @@ import Head from 'next/head';
 
 import { getSiteMetaData } from '@utils/helpers';
 
-interface SEOProps {
+interface SeoProps {
   title: string;
   description?: string;
 }
 
-export const SEO: React.FunctionComponent<SEOProps> = ({
+const Seo: React.FunctionComponent<SeoProps> = ({
   title,
-  description = '',
-}: SEOProps) => {
+  description,
+}: SeoProps) => {
   const siteMetadata = getSiteMetaData();
 
   const metaDescription = description || siteMetadata.description;
@@ -19,7 +19,7 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
   return (
     <Head>
       <title>
-        {title} | {siteMetadata.title}
+        {title} |{siteMetadata.title}
       </title>
       <meta name="description" content={metaDescription} />
       <meta property="og:type" content="website" />
@@ -41,3 +41,9 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
     </Head>
   );
 };
+
+Seo.defaultProps = {
+  description: '',
+};
+
+export default Seo;
