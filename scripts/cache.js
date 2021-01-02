@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import fs from 'fs';
+const fs = require('fs');
 
-import matter from 'gray-matter';
+const matter = require('gray-matter');
 
 const getPostsFolders = () => {
   // Get all posts folders located in `content/posts`
