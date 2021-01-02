@@ -47,7 +47,7 @@ const Card: React.FunctionComponent<CardProps> = ({
 
             <div className="mt-4">
               <Link href={hrefPost} as={asPost}>
-                <a className="text-2xl text-gray-700 font-bold hover:text-gray-600 dark:text-white hover:no-underline">
+                <a className="text-2xl text-gray-700 font-bold dark:text-white hover:text-blue-500 dark:hover:text-blue-500 hover:no-underline">
                   {title}
                 </a>
               </Link>
