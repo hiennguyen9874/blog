@@ -17,8 +17,8 @@ const Image: React.FunctionComponent<ImageProps> = ({
   className,
 }: ImageProps) => (
   <picture className={className}>
-    <source type="image/webp" data-srcset={webpSrc} />
-    <source type="image/png" data-srcset={src} />
+    <source type="image/webp" srcSet={webpSrc} />
+    <source type="image/png" srcSet={src} />
     <img className={`lazyload blur ${className}`} alt={alt} src={previewSrc} />
   </picture>
 );

@@ -38,6 +38,13 @@ export const postComponents = {
   hr: dynamic(() => import('../components/Markdown/ThematicBreak')),
   a: dynamic(() => import('../components/Markdown/Link')),
   img: dynamic(() => import('../components/Markdown/Image')),
+  // Custom
+  CustomImage: dynamic(
+    () => import('../components/CustomComponent/CustomImage'),
+  ),
+  CustomImage2: dynamic(
+    () => import('../components/CustomComponent/CustomImage2'),
+  ),
 };
 
 const getPostsFolders = (): Array<{

@@ -8,7 +8,32 @@ date: 2020-04-19T11:00:00.000Z
 
 ## A template for markdown blogs with GitHub pages
 
-![Markdown logo](https://images.unsplash.com/photo-1590889177644-58ae7414f30c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=christian-salas-DjGRskJdBws-unsplash.jpg&w=2400)
+
+Image using default html:
+
+```
+![Markdown logo](/content/assets/blog-template/first_image.jpg)
+```
+![Markdown logo](/content/assets/blog-template/first_image.jpg)
+
+---
+
+Image using next/image, optimize image with builtin next (must have size of image)
+
+```
+<CustomImage src="/content/assets/blog-template/first_image.jpg" alt="first_image" width={700} height={460} />
+```
+<CustomImage src="/content/assets/blog-template/first_image.jpg" alt="first_image" width={700} height={460} />
+
+---
+
+Image using next-optimized-images
+```
+<CustomImage2 src="/content/assets/blog-template/first_image.jpg" alt="first_image" />
+```
+<CustomImage2 src="/content/assets/blog-template/first_image.jpg" alt="first_image" />
+
+**Note: All path of image must inside public folder**
 
 # Instructions for deploying this blog template
 
@@ -131,6 +156,10 @@ class Example extends React.Component {
 
 (c) Kaz Malhotra 2019
 
+
+## Math
+
+Must below code in markdown file
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
@@ -138,33 +167,30 @@ class Example extends React.Component {
   crossOrigin="anonymous"
 />
 
-Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following
-equation.
+```
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+  integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
+  crossOrigin="anonymous"
+/>
+```
 
+### One line math
+
+```$L = \frac{1}{2} \rho v^2 S C_L$```
+
+Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation: $L = \frac{1}{2} \rho v^2 S C_L$
+
+
+### Multiple line math
+```
 $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$
+```
 
-A paragraph before the thematic break.
-
----
-
-A paragraph after the thematic break.
-
-A paragraph before the thematic break.
-
----
-
-A paragraph after the thematic break.
-
-A paragraph before the thematic break.
-
----
-
-A paragraph after the thematic break.
-
-A paragraph before the thematic break.
-
----
-
-A paragraph after the thematic break.
+Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation:
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$

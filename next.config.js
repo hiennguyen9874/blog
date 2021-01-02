@@ -22,4 +22,7 @@ module.exports = withPlugins([[optimizedImages, {}]], {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  images: {
+    domains: ['images.unsplash.com'],
+  }
 });

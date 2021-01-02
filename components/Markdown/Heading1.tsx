@@ -8,8 +8,9 @@ interface Heading1Props {
 const Heading1: React.FunctionComponent<Heading1Props> = ({
   children,
 }: Heading1Props) => (
-  <h1 className="font-bold text-4xl text-gray-700 dark:text-gray-200 mb-8">
+  <h1 className="font-bold text-4xl text-gray-700 dark:text-gray-200">
     {children}
+    <hr className="mt-4 mb-8" />
   </h1>
 );
 
