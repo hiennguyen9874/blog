@@ -86,12 +86,13 @@ const Card: React.FunctionComponent<CardProps> = ({
                           {author.name}
                         </h1>
                       </div>
-                      <div className="flex flex-row">
+                      <div className="flex flex-row items-center">
                         <span className="font-normal text-gray-400 dark:text-white">
                           {date}
                         </span>
+                        <span className="ml-2 w-1 h-1 bg-gray-400 rounded-full bg-opacity-50" />
                         <div className="ml-2 flex flex-row space-x-1 items-center">
-                          <div className="flex flex-row text-gray-400 items-center">
+                          <div className="flex flex-row text-gray-400">
                             <svg
                               stroke="currentColor"
                               fill="currentColor"
