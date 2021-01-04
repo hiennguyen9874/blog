@@ -1,10 +1,13 @@
 const path = require('path');
-
 const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 module.exports = withPlugins(
   [
+    [withBundleAnalyzer],
     [
       optimizedImages,
       {
@@ -23,6 +26,7 @@ module.exports = withPlugins(
         };
       }
 
+      // import svg file as component
       config.module.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -34,7 +38,7 @@ module.exports = withPlugins(
       includePaths: [path.join(__dirname, 'styles')],
     },
     images: {
-      domains: ['images.unsplash.com'],
+      domains: [],
     },
   },
 );

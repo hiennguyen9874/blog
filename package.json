@@ -13,7 +13,10 @@
     "lint:style": "stylelint 'src/**/styled.ts' 'src/**/*.tsx'",
     "lint": "yarn lint:es && yarn lint:style",
     "format": "prettier --write .",
-    "cache": "node scripts/cache.js"
+    "cache": "node scripts/cache.js",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "husky": {
     "hooks": {
@@ -30,12 +33,14 @@
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
+    "@next/bundle-analyzer": "^10.0.4",
     "@svgr/webpack": "^5.5.0",
     "@tailwindcss/typography": "^0.3.1",
     "@types/react-syntax-highlighter": "^13.5.0",
     "autoprefixer": "^10.1.0",
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
+    "cross-env": "^7.0.3",
     "eslint-import-resolver-typescript": "^2.3.0",
     "expo-dark-mode-switch": "0.0.1",
     "gray-matter": "^4.0.2",
@@ -55,8 +60,10 @@
     "next-seo": "^4.17.0",
     "next-themes": "0.0.10",
     "postcss": "^8.2.1",
+    "postcss-custom-properties": "^10.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.0",
+    "postcss-nested": "^5.0.3",
     "postcss-preset-env": "^6.7.0",
     "precss": "^4.0.0",
     "prism-react-renderer": "^1.1.1",
@@ -78,7 +85,8 @@
     "tailwindcss": "^2.0.2",
     "typeface-merriweather": "^1.1.13",
     "typeface-open-sans": "^1.1.13",
-    "webp-loader": "^0.6.0"
+    "webp-loader": "^0.6.0",
+    "webpack-bundle-analyzer": "^4.3.0"
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.2",

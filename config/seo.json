@@ -1,11 +1,11 @@
 {
   "siteMetadata": {
     "title": "Next.js Starter Blog",
+    "description": "A blog created with Next.js and Tailwind.css",
     "author": {
       "name": "Xuan Hien",
       "summary": "Who works building clean user interfaces with React"
     },
-    "description": "A blog created with Next.js and Tailwind.css",
     "siteUrl": "https://xuanhien.vercel.app/",
     "language": "en-US",
     "social": {
