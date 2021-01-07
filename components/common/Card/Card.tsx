@@ -3,7 +3,6 @@ import React from 'react';
 import Link from 'next/link';
 
 import PublicImage from '@components/common/PublicImage';
-import PublicImage2 from '@components/common/PublicImage2';
 import { getSiteMetaData } from '@utils/helpers';
 
 interface CardProps {
@@ -32,16 +31,21 @@ const Card: React.FunctionComponent<CardProps> = ({
   return (
     <div className="transform duration-300 group container hover:-translate-y-2 active:translate-y-0 max-w-4xl bg-white rounded-xl shadow-md overflow-hidden md:max-w-4xl dark:bg-gray-700 active:translate-y-0">
       <div className="flex container mx-auto items-center justify-between">
-        <div className="w-full md:w-5/12 md:flex-shrink-0" role="button">
-          <Link href={hrefPost} as={asPost}>
-            <a>
-              <PublicImage2
-                className="w-full h-full p-2 rounded-2xl object-cover md:w-96"
+        <div
+          className="w-full md:w-5/12 flex flex-col items-center justify-between"
+          role="button"
+        >
+          <a className="flex flex-col items-center justify-between p-1">
+            <Link href={hrefPost} as={asPost}>
+              <PublicImage
+                className="w-full h-full rounded-lg object-cover md:w-96"
                 src={thumbnail}
                 alt="Profile"
+                width={360}
+                height={260}
               />
-            </a>
-          </Link>
+            </Link>
+          </a>
         </div>
 
         <div className="md:w-7/12 px-4 py-2">

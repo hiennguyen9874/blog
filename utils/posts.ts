@@ -146,8 +146,6 @@ export const getSortedPosts = async (): Promise<Array<PostType>> => {
 export const getAllSearchPost = (): Array<{
   slug: string;
   frontmatter: FrontMatterType;
-  excerpt: string;
-  content: string;
 }> => {
   const postFolders = getPostsFolders();
 
@@ -157,7 +155,7 @@ export const getAllSearchPost = (): Array<{
       .toString();
 
     // Parse markdown, get frontmatter data, excerpt and content.
-    const { content, data, excerpt } = matter(markdownWithMetadata);
+    const { data } = matter(markdownWithMetadata);
 
     const frontmatter = getFrontMatter(data);
 
@@ -167,8 +165,6 @@ export const getAllSearchPost = (): Array<{
     return {
       slug,
       frontmatter,
-      excerpt,
-      content,
     };
   });
   return posts.sort(

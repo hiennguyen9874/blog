@@ -36,7 +36,7 @@ const getAllSearchPost = () => {
       .toString();
 
     // Parse markdown, get frontmatter data, excerpt and content.
-    const { content, data, excerpt } = matter(markdownWithMetadata);
+    const { data } = matter(markdownWithMetadata);
 
     const frontmatter = {
       title: data.title,
@@ -52,8 +52,6 @@ const getAllSearchPost = () => {
     return {
       slug,
       frontmatter,
-      excerpt,
-      content,
     };
   });
   return posts.sort(
