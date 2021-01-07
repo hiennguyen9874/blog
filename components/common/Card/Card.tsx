@@ -29,7 +29,7 @@ const Card: React.FunctionComponent<CardProps> = ({
   const { author } = getSiteMetaData();
 
   return (
-    <div className="transform duration-300 group container hover:-translate-y-2 active:translate-y-0 max-w-4xl bg-white rounded-xl shadow-md overflow-hidden md:max-w-4xl dark:bg-gray-700 active:translate-y-0">
+    <div className="transform duration-300 group container hover:-translate-y-2 active:translate-y-0 max-w-4xl bg-white rounded-xl shadow-sm hover:shadow-lg overflow-hidden md:max-w-4xl dark:bg-gray-700 active:translate-y-0">
       <div className="flex container mx-auto items-center justify-between">
         <div
           className="w-full md:w-5/12 flex flex-col items-center justify-between"
@@ -42,7 +42,7 @@ const Card: React.FunctionComponent<CardProps> = ({
                 src={thumbnail}
                 alt="Profile"
                 width={360}
-                height={260}
+                height={280}
               />
             </Link>
           </a>
