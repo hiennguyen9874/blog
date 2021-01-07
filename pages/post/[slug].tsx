@@ -3,7 +3,7 @@ import { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import hydrate from 'next-mdx-remote/hydrate';
 
-import { Bio, Layout, Seo } from '@components/common';
+import { Bio, Layout, Seo, Comments } from '@components/common';
 import {
   getPostBySlug,
   getPostsSlugs,
@@ -26,6 +26,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
     return {
       props: {
         posts: postData,
+        slug,
       },
     };
   }
@@ -44,9 +45,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 interface PostPageProps {
   posts: PostDataType;
+  slug: string;
 }
 
-const PostPage: NextPage<PostPageProps> = ({ posts }: PostPageProps) => {
+const PostPage: NextPage<PostPageProps> = ({ posts, slug }: PostPageProps) => {
   const { frontmatter, post, previousPost, nextPost } = posts;
   const content = hydrate(post.source, { components: postComponents });
   return (
@@ -89,12 +91,23 @@ const PostPage: NextPage<PostPageProps> = ({ posts }: PostPageProps) => {
           <div className="w-full lg:w-8/12">
             <div className="px-4 py-1 bg-white rounded-xl dark:bg-gray-700">
               <main>{content}</main>
-              <hr className="mt-4" />
+
+              <hr className="mt-10" />
               <footer>
-                <Bio className="mt-8 mb-16" />
+                <Bio className="" />
               </footer>
 
-              <nav className="flex flex-row justify-between mb-10">
+              <div className="mt-10">
+                <Comments
+                  post={{
+                    id: slug,
+                    title: frontmatter.title,
+                    url: `/post/${slug}`,
+                  }}
+                />
+              </div>
+
+              <nav className="mt-10 mb-4 flex flex-row justify-between">
                 {previousPost ? (
                   <Link href="/post/[slug]" as={`/post/${previousPost.slug}`}>
                     <a className="text-lg font-bold">

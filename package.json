@@ -41,6 +41,7 @@
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
     "cross-env": "^7.0.3",
+    "disqus-react": "^1.0.10",
     "eslint-import-resolver-typescript": "^2.3.0",
     "expo-dark-mode-switch": "0.0.1",
     "gray-matter": "^4.0.2",

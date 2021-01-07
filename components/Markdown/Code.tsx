@@ -32,7 +32,10 @@ const CodeBlock: React.FunctionComponent<CodeBlockProps> = (
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
-          className={clsx('text-left overflow-auto mx-0 my-4 p-2', className)}
+          className={clsx(
+            'text-left overflow-auto mx-0 my-4 p-2 rounded-md',
+            className,
+          )}
           style={style}
         >
           {tokens.map((line, i) => {

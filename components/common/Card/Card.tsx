@@ -70,9 +70,9 @@ const Card: React.FunctionComponent<CardProps> = ({
             </div>
 
             <div className="flex justify-between items-center mt-4">
-              <div className="mr-2">
-                <Link href="#">
-                  <a className="flex items-center">
+              <div className="mr-2 flex flex-row items-center">
+                <Link href="/aboutme">
+                  <a>
                     <PublicImage
                       className="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
                       src="assets/img/profile.jpg"
@@ -80,38 +80,43 @@ const Card: React.FunctionComponent<CardProps> = ({
                       height={40}
                       alt="avatar"
                     />
-                    <div className="ml-3 flex flex-col justify-center">
-                      <div className="">
-                        <h1 className=" text-gray-700 font-bold dark:text-white hover:text-blue-500 dark:hover:text-blue-500 hover:no-underline">
-                          {author.name}
-                        </h1>
-                      </div>
-                      <div className="flex flex-row items-center">
-                        <span className="font-normal text-gray-400 dark:text-white">
-                          {date}
-                        </span>
-                        <span className="ml-2 w-1 h-1 bg-gray-400 rounded-full bg-opacity-50" />
-                        <div className="ml-2 flex flex-row space-x-1 items-center">
-                          <div className="flex flex-row text-gray-400">
-                            <svg
-                              stroke="currentColor"
-                              fill="currentColor"
-                              viewBox="0 0 512 512"
-                              height="1em"
-                              width="1em"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
-                            </svg>
-                          </div>
-                          <div className="ml-2 font-normal text-gray-400 dark:text-white">
-                            {timeReading} min
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </a>
                 </Link>
+
+                <div className="ml-3 flex flex-col justify-center">
+                  <div>
+                    <Link href="/aboutme">
+                      <a>
+                        <h1 className="text-gray-700 font-bold dark:text-white hover:text-blue-500 dark:hover:text-blue-500 hover:no-underline">
+                          {author.name}
+                        </h1>
+                      </a>
+                    </Link>
+                  </div>
+                  <div className="flex flex-row items-center">
+                    <span className="font-normal text-gray-400 dark:text-white">
+                      {date}
+                    </span>
+                    <span className="ml-2 w-1 h-1 bg-gray-400 rounded-full bg-opacity-50" />
+                    <div className="ml-2 flex flex-row space-x-1 items-center">
+                      <div className="flex flex-row text-gray-400">
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          viewBox="0 0 512 512"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
+                        </svg>
+                      </div>
+                      <div className="ml-2 font-normal text-gray-400 dark:text-white">
+                        {timeReading} min
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import clsx from 'clsx';
 import 'lazysizes';
 
 interface PublicImageProps {
@@ -20,7 +21,7 @@ const PublicImage: React.FunctionComponent<PublicImageProps> = ({
   const srcFormatted = src[0] === '/' ? src.slice(1) : src;
   return (
     <Image
-      className={`lazyload blur ${className}`}
+      className={clsx('lazyload blur', className)}
       src={`/${srcFormatted}`}
       alt={alt}
       width={width}

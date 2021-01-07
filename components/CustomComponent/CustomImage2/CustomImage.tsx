@@ -16,7 +16,7 @@ const CustomImage2: React.FunctionComponent<CustomImage2Props> = ({
 }: CustomImage2Props) => (
   <div className="flex justify-center py-4">
     <PublicImage2
-      className="relative rounded-xl border shadow-md"
+      className="relative rounded-xl shadow-md"
       src={src}
       alt={alt}
     />

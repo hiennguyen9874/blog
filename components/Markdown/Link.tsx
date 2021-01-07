@@ -12,7 +12,7 @@ const CustomLink: React.FunctionComponent<CustomLinkProps> = ({
   children,
 }: CustomLinkProps) => (
   <Link href={href}>
-    <a className="text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-300 hover:no-underline">
+    <a className="text-blue-500 hover:text-blue-900 dark:text-blue-500 dark:hover:text-blue-300 hover:no-underline">
       {children}
     </a>
   </Link>

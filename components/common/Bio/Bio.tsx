@@ -28,7 +28,13 @@ const Bio: React.FunctionComponent<BioProps> = ({ className }: BioProps) => {
 
       <p className="text-base leading-7">
         Written by <b className="font-semibold">{author.name}</b>{' '}
-        {author.summary} <a href={social.twitter.link}>Follow him on twitter</a>
+        {author.summary}{' '}
+        <a
+          className="text-blue-500 hover:text-blue-900 dark:text-blue-500 dark:hover:text-blue-300 hover:no-underline"
+          href={social.twitter.link}
+        >
+          Follow him on twitter
+        </a>
       </p>
     </div>
   );

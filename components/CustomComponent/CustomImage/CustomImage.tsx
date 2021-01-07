@@ -21,7 +21,7 @@ const CustomImage: React.FunctionComponent<CustomImageProps> = ({
   return (
     <div className="flex justify-center py-4">
       <Image
-        className="relative rounded-xl border shadow-md"
+        className="relative rounded-xl shadow-md"
         src={`/${srcFormatted}`}
         alt={alt}
         width={width}
