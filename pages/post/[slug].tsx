@@ -10,6 +10,7 @@ import {
   postComponents,
   PostDataType,
 } from '@utils/posts';
+import { getDisqusData } from '@utils/helpers';
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   if (typeof slug === 'string') {
@@ -102,7 +103,8 @@ const PostPage: NextPage<PostPageProps> = ({ posts, slug }: PostPageProps) => {
                   post={{
                     id: slug,
                     title: frontmatter.title,
-                    url: `/post/${slug}`,
+                    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+                    url: `${getDisqusData().siteUrl}/post/${slug}`,
                   }}
                 />
               </div>
