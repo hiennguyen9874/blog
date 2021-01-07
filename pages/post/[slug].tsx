@@ -94,7 +94,8 @@ const PostPage: NextPage<PostPageProps> = ({ posts, slug }: PostPageProps) => {
               <main>{content}</main>
 
               <hr className="mt-10" />
-              <footer>
+
+              <footer className="mt-10">
                 <Bio className="" />
               </footer>
 
@@ -108,6 +109,8 @@ const PostPage: NextPage<PostPageProps> = ({ posts, slug }: PostPageProps) => {
                   }}
                 />
               </div>
+
+              <hr className="mt-10" />
 
               <nav className="mt-10 mb-4 flex flex-row justify-between">
                 {previousPost ? (
