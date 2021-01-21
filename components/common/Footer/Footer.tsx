@@ -7,12 +7,12 @@ import { getSiteMetaData } from '@utils/helpers';
 const Footer: React.FunctionComponent = () => {
   const { social } = getSiteMetaData();
   return (
-    <footer className="mt-10 md:px-6 md:py-4 bg-white shadow dark:border-gray-700 dark:bg-gray-700">
+    <footer className="mt-10 md:px-6 md:py-4 shadow bg-white dark:border-blueGray-700 dark:bg-blueGray-600">
       <div className="max-w-screen-xl container flex flex-col mx-auto md:px-24 md:flex-row items-center justify-between">
         <div className="text-lg font-light">
           © {new Date().getFullYear()}, Built with{' '}
           <a
-            className="text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500 hover:no-underline"
+            className="hover:no-underline text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500"
             href="https://nextjs.org/"
           >
             Next.js

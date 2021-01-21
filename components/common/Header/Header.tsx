@@ -25,13 +25,13 @@ const Header: React.FunctionComponent = () => {
   const isDarkMode = resolvedTheme === 'dark';
 
   return (
-    <nav className="bg-white px-6 py-4 shadow dark:border-gray-700 dark:bg-gray-700">
+    <nav className=" px-6 py-4 shadow bg-white dark:border-blueGray-700 dark:bg-blueGray-600">
       <div className="max-w-screen-xl md:px-24 mx-auto antialiased font-body">
         <div className="flex flex-col container mx-auto md:flex-row md:items-center md:justify-between">
           <div className="">
             <h1>
               <Link href="/">
-                <a className="text-3xl font-bold md:text-4xl text-gray-800 dark:text-gray-200 hover:no-underline">
+                <a className="text-3xl font-bold md:text-4xl hover:no-underline text-gray-800 dark:text-gray-200 ">
                   Blog
                 </a>
               </Link>

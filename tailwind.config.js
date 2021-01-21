@@ -3,6 +3,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: {
@@ -19,10 +20,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        OxfordBlue: '#2D3748',
-        Mirage: '#1A202C',
-        Alabaster: '#F8F8F8',
-        'neon-orange': '#f92300',
+        teal: colors.teal,
+        blueGray: colors.blueGray,
+        coolGray: colors.coolGray,
+        cyan: colors.cyan,
+        lightBlue: colors.lightBlue,
       },
       fontSize: {
         '7xl': '4.5rem',

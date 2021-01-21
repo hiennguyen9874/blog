@@ -28,7 +28,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
     <>
       <SearchDialog />
       <div className={clsx('', onSearching ? 'opacity-30' : '')}>
-        <div className="w-full min-h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-800 dark:text-white">
+        <div className="w-full min-h-screen overflow-x-hidden bg-gray-100 dark:bg-blueGray-800 dark:text-white">
           <Header />
           <div className="max-w-screen-xl px-4 md:px-24 mx-auto antialiased font-body">
             <main>{children}</main>

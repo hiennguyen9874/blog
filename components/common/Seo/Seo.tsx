@@ -36,8 +36,8 @@ const Seo: React.FunctionComponent<SeoProps> = ({
         name="twitter:creator"
         content={siteMetadata.social.twitter.username}
       />
-      <link rel="icon" type="image/png" href="/static/favicon.ico" />
-      <link rel="apple-touch-icon" href="/static/favicon.ico" />
+      <link rel="icon" type="image/png" href="/favicon/favicon.ico" />
+      <link rel="apple-touch-icon" href="/favicon/favicon.ico" />
     </Head>
   );
 };

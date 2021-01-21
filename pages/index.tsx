@@ -61,9 +61,6 @@ const Index: NextPage<IndexProps> = ({ posts }: IndexProps) => (
                 </div>
               ),
             )}
-            <div className="mt-8">
-              <Pagination />
-            </div>
           </div>
           <div className="-mx-20 w-4/12 hidden lg:block">
             <div className="px-8 border-l-8 pl-6 dark:border-gray-700">
@@ -81,6 +78,12 @@ const Index: NextPage<IndexProps> = ({ posts }: IndexProps) => (
                 Recent Post
               </h2>
             </div>
+          </div>
+        </div>
+        <div className="mt-8 flex justify-center w-full">
+          <div className="w-5/12">
+            {/* eslint-disable-next-line @typescript-eslint/no-empty-function */}
+            <Pagination page={2} numPage={3} onChangePage={() => {}} />
           </div>
         </div>
       </div>
