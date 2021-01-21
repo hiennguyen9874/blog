@@ -33,17 +33,18 @@ module.exports = {
     node: true,
   },
   extends: [
+    'eslint:recommended',
     'airbnb',
     'airbnb/hooks',
-    'prettier',
-    'prettier/react',
-    'plugin:jsx-a11y/recommended',
     'plugin:react-hooks/recommended',
-    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'prettier',
+    'prettier/react',
+    'plugin:jsx-a11y/recommended',
     'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
   ],
   plugins: [
     'import',
@@ -51,9 +52,9 @@ module.exports = {
     'react-hooks',
     '@typescript-eslint',
     'eslint-plugin-prettier',
+    'simple-import-sort',
   ],
   rules: {
-    'prettier/prettier': ['error'],
     'import/no-unresolved': 'error', // turn on errors for missing imports
     'react/jsx-filename-extension': [0, { extensions: ['.tsx'] }],
     'react/react-in-jsx-scope': 'off',
@@ -96,5 +97,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Use our .prettierrc file as source
   },
 };

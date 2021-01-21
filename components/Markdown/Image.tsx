@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Image from '@components/common/Image';
-
 interface CustomImageProps {
   src: string;
   alt: string;

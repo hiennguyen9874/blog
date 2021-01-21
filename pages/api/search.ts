@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { getAllSearchPost } from '@utils/posts';

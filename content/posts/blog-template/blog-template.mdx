@@ -11,12 +11,12 @@ timeReading: 5
 
 ## A template for markdown blogs with GitHub pages
 
-
 Image using default html:
 
 ```
 ![Markdown logo](/content/assets/blog-template/first_image.jpg)
 ```
+
 ![Markdown logo](/content/assets/blog-template/first_image.jpg)
 
 ---
@@ -26,15 +26,26 @@ Image using next/image, optimize image with builtin next (must have size of imag
 ```
 <CustomImage src="/content/assets/blog-template/first_image.jpg" alt="first_image" width={700} height={460} />
 ```
-<CustomImage src="/content/assets/blog-template/first_image.jpg" alt="first_image" width={700} height={460} />
+
+<CustomImage
+  src="/content/assets/blog-template/first_image.jpg"
+  alt="first_image"
+  width={700}
+  height={460}
+/>
 
 ---
 
 Image using next-optimized-images
+
 ```
 <CustomImage2 src="/content/assets/blog-template/first_image.jpg" alt="first_image" />
 ```
-<CustomImage2 src="/content/assets/blog-template/first_image.jpg" alt="first_image" />
+
+<CustomImage2
+  src="/content/assets/blog-template/first_image.jpg"
+  alt="first_image"
+/>
 
 **Note: All path of image must inside public folder**
 
@@ -159,10 +170,10 @@ class Example extends React.Component {
 
 (c) Kaz Malhotra 2019
 
-
 ## Math
 
 Must below code in markdown file
+
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
@@ -181,12 +192,12 @@ Must below code in markdown file
 
 ### One line math
 
-```$L = \frac{1}{2} \rho v^2 S C_L$```
+`$L = \frac{1}{2} \rho v^2 S C_L$`
 
 Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation: $L = \frac{1}{2} \rho v^2 S C_L$
 
-
 ### Multiple line math
+
 ```
 $$
 L = \frac{1}{2} \rho v^2 S C_L
@@ -194,6 +205,7 @@ $$
 ```
 
 Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation:
+
 $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$

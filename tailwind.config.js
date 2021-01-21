@@ -32,7 +32,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      san: [...defaultTheme.fontFamily.sans],
+      san: ['Fira Sans', ...defaultTheme.fontFamily.sans],
       serif: [...defaultTheme.fontFamily.serif],
       mono: [...defaultTheme.fontFamily.mono],
     },

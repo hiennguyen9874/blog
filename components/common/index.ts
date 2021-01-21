@@ -9,3 +9,4 @@ export { default as Footer } from './Footer';
 export { default as PublicImage } from './PublicImage';
 export { default as PublicImage2 } from './PublicImage2';
 export { default as Comments } from './Comments';
+export { default as Pagination } from './Pagination';

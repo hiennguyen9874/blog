@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { Key } from 'react';
 import Link from 'next/link';
 
 import PublicImage from '@components/common/PublicImage';
@@ -14,6 +13,7 @@ interface CardProps {
   thumbnail: string;
   tags: string[];
   timeReading?: number;
+  key: Key;
 }
 
 const Card: React.FunctionComponent<CardProps> = ({
@@ -25,11 +25,15 @@ const Card: React.FunctionComponent<CardProps> = ({
   thumbnail,
   tags,
   timeReading,
+  key,
 }: CardProps) => {
   const { author } = getSiteMetaData();
 
   return (
-    <div className="transform duration-300 group container hover:-translate-y-2 active:translate-y-0 max-w-4xl bg-white rounded-xl shadow-sm hover:shadow-lg overflow-hidden md:max-w-4xl dark:bg-gray-700 active:translate-y-0">
+    <div
+      key={key}
+      className="transform duration-300 group container hover:-translate-y-2 active:translate-y-0 max-w-4xl bg-white rounded-xl shadow-sm hover:shadow-lg overflow-hidden md:max-w-4xl dark:bg-gray-700 active:translate-y-0"
+    >
       <div className="flex container mx-auto items-center justify-between">
         <div
           className="w-full md:w-5/12 flex flex-col items-center justify-between"
@@ -37,13 +41,15 @@ const Card: React.FunctionComponent<CardProps> = ({
         >
           <a className="flex flex-col items-center justify-between p-1">
             <Link href={hrefPost} as={asPost}>
-              <PublicImage
-                className="w-full h-full rounded-lg object-cover md:w-96"
-                src={thumbnail}
-                alt="Profile"
-                width={360}
-                height={280}
-              />
+              <a>
+                <PublicImage
+                  className="w-full h-full rounded-lg object-cover md:w-96"
+                  src={thumbnail}
+                  alt="profile"
+                  width={360}
+                  height={280}
+                />
+              </a>
             </Link>
           </a>
         </div>
@@ -53,6 +59,8 @@ const Card: React.FunctionComponent<CardProps> = ({
             <div className="flex flex-row">
               {tags.map((tag) => (
                 <div className="mx-0.5">
+                  {/* TODO: */}
+                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                   <Link href="#">
                     <a className="px-1 pb-0.5 pt-0 font-normal text-md items-center rounded-md bg-gray-400 text-gray-100 hover:bg-gray-600 dark:hover:bg-gray-400 dark:bg-gray-600 dark:text-white hover:no-underline">
                       {tag}

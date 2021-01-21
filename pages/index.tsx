@@ -2,7 +2,7 @@
 import React from 'react';
 import { GetStaticPropsResult, NextPage } from 'next';
 
-import { Layout, Seo, Card } from '@components/common';
+import { Layout, Seo, Card, Pagination } from '@components/common';
 import { getSortedPosts, PostType } from '@utils/posts';
 
 interface IndexProps {
@@ -56,47 +56,13 @@ const Index: NextPage<IndexProps> = ({ posts }: IndexProps) => (
                     asPost={`/post/${slug}`}
                     tags={tag}
                     timeReading={timeReading}
+                    key={slug}
                   />
                 </div>
               ),
             )}
             <div className="mt-8">
-              <div className="flex">
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 font-medium rounded-md cursor-not-allowed bg-gray-400 text-gray-100 dark:bg-gray-600 dark:text-white hover:no-underline"
-                >
-                  previous
-                </a>
-
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 rounded-md bg-gray-400 text-gray-100 hover:bg-gray-600 dark:hover:bg-gray-400 dark:bg-gray-600 dark:text-white hover:no-underline"
-                >
-                  1
-                </a>
-
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 rounded-md bg-gray-400 text-gray-100 hover:bg-gray-600 dark:hover:bg-gray-400 dark:bg-gray-600 dark:text-white hover:no-underline"
-                >
-                  2
-                </a>
-
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 rounded-md bg-gray-400 text-gray-100 hover:bg-gray-600 dark:hover:bg-gray-400 dark:bg-gray-600 dark:text-white hover:no-underline"
-                >
-                  3
-                </a>
-
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 rounded-md bg-gray-400 text-gray-100 hover:bg-gray-600 dark:hover:bg-gray-400 dark:bg-gray-600 dark:text-white hover:no-underline"
-                >
-                  Next
-                </a>
-              </div>
+              <Pagination />
             </div>
           </div>
           <div className="-mx-20 w-4/12 hidden lg:block">
