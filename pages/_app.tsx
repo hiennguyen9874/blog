@@ -8,10 +8,7 @@ import '@styles/main.scss';
 import 'typeface-open-sans';
 import 'typeface-merriweather';
 
-const MyApp: React.FunctionComponent<AppProps> = ({
-  Component,
-  pageProps,
-}: AppProps) => (
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
   <ThemeProvider defaultTheme="system" enableSystem attribute="class">
     <ContextProvider>
       <Component {...pageProps} />

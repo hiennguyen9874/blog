@@ -11,9 +11,7 @@ interface DisqusCommentsProps {
   };
 }
 
-const DisqusComments: React.FunctionComponent<DisqusCommentsProps> = ({
-  post,
-}: DisqusCommentsProps) => {
+const DisqusComments = ({ post }: DisqusCommentsProps): JSX.Element => {
   const disqusShortname = getDisqusData().shortName;
   const disqusConfig = {
     url: post.url,

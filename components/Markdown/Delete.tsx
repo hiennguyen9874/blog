@@ -5,8 +5,8 @@ interface DeleteProps {
   children: any;
 }
 
-const Delete: React.FunctionComponent<DeleteProps> = ({
-  children,
-}: DeleteProps) => <del className="font-san">{children}</del>;
+const Delete = ({ children }: DeleteProps): JSX.Element => (
+  <del className="font-san">{children}</del>
+);
 
 export default Delete;

@@ -11,7 +11,7 @@ interface BioProps {
   className: string;
 }
 
-const Bio: React.FunctionComponent<BioProps> = ({ className }: BioProps) => {
+const Bio = ({ className }: BioProps): JSX.Element => {
   const { author, social } = getSiteMetaData();
 
   return (

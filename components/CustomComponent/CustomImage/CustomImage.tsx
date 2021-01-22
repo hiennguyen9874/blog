@@ -11,12 +11,12 @@ interface CustomImageProps {
   height: number;
 }
 
-const CustomImage: React.FunctionComponent<CustomImageProps> = ({
+const CustomImage = ({
   src,
   alt,
   width,
   height,
-}: CustomImageProps) => {
+}: CustomImageProps): JSX.Element => {
   const srcFormatted = src[0] === '/' ? src.slice(1) : src;
   return (
     <div className="flex justify-center py-4">

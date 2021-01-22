@@ -5,8 +5,8 @@ interface TableHeadProps {
   children: any;
 }
 
-const TableHead: React.FunctionComponent<TableHeadProps> = ({
-  children,
-}: TableHeadProps) => <thead>{children}</thead>;
+const TableHead = ({ children }: TableHeadProps): JSX.Element => (
+  <thead>{children}</thead>
+);
 
 export default TableHead;

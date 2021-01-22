@@ -5,9 +5,7 @@ interface TableProps {
   children: any;
 }
 
-const Table: React.FunctionComponent<TableProps> = ({
-  children,
-}: TableProps) => (
+const Table = ({ children }: TableProps): JSX.Element => (
   <table className="table rounded-md mx-auto">{children}</table>
 );
 

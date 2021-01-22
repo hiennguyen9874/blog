@@ -8,11 +8,11 @@ interface PaginationProps {
   onChangePage: (page: number) => void;
 }
 
-const Pagination: React.FunctionComponent<PaginationProps> = ({
+const Pagination = ({
   page,
   numPage,
   onChangePage,
-}: PaginationProps) => {
+}: PaginationProps): JSX.Element => {
   return (
     <div className="flex flex-row items-center p-1 rounded-full duration-500 bg-white dark:bg-blueGray-700">
       <div

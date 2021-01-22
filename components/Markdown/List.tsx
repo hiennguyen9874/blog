@@ -5,7 +5,7 @@ interface ListProps {
   children: any;
 }
 
-const List: React.FunctionComponent<ListProps> = ({ children }: ListProps) => (
+const List = ({ children }: ListProps): JSX.Element => (
   <ul className="mt-2 list-disc list-inside px-8 space-y-1">{children}</ul>
 );
 

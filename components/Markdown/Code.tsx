@@ -13,9 +13,7 @@ interface CodeBlockProps {
   children: any;
 }
 
-const CodeBlock: React.FunctionComponent<CodeBlockProps> = (
-  props: CodeBlockProps,
-) => {
+const CodeBlock = (props: CodeBlockProps): JSX.Element => {
   const className = props.children.props.className || '';
   const matches = className.match(/language-(?<lang>.*)/);
 

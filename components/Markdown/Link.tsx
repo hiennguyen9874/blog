@@ -7,10 +7,7 @@ interface CustomLinkProps {
   children: any;
 }
 
-const CustomLink: React.FunctionComponent<CustomLinkProps> = ({
-  href,
-  children,
-}: CustomLinkProps) => (
+const CustomLink = ({ href, children }: CustomLinkProps): JSX.Element => (
   <Link href={href}>
     <a className="text-blue-500 hover:text-blue-900 dark:text-blue-500 dark:hover:text-blue-300 hover:no-underline">
       {children}

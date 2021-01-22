@@ -11,9 +11,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FunctionComponent<LayoutProps> = ({
-  children,
-}: LayoutProps) => {
+const Layout = ({ children }: LayoutProps): JSX.Element => {
   const { onSearching } = useSearchState();
 
   useEffect(() => {

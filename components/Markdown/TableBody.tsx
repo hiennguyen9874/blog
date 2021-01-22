@@ -5,8 +5,8 @@ interface TableBodyProps {
   children: any;
 }
 
-const TableBody: React.FunctionComponent<TableBodyProps> = ({
-  children,
-}: TableBodyProps) => <tbody>{children}</tbody>;
+const TableBody = ({ children }: TableBodyProps): JSX.Element => (
+  <tbody>{children}</tbody>
+);
 
 export default TableBody;

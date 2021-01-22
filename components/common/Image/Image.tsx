@@ -9,13 +9,13 @@ interface ImageProps {
   className: string;
 }
 
-const Image: React.FunctionComponent<ImageProps> = ({
+const Image = ({
   alt,
   src,
   previewSrc,
   webpSrc,
   className,
-}: ImageProps) => (
+}: ImageProps): JSX.Element => (
   <picture className={className}>
     <source type="image/webp" srcSet={webpSrc} />
     <source type="image/png" srcSet={src} />

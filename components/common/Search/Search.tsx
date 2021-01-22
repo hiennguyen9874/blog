@@ -4,7 +4,7 @@ import { useSearchDispatch, SET_ON_SEARCH } from '@Context/Search';
 
 import './Search.module.scss';
 
-const Search: React.FunctionComponent = () => {
+const Search = (): JSX.Element => {
   const searchDispatch = useSearchDispatch();
   return (
     <div className="max-w-4xl container flex flex-col relative text-gray-600 rounded-lg">

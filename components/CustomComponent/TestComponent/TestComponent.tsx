@@ -4,9 +4,7 @@ interface TestComponentProps {
   name?: string;
 }
 
-const TestComponent: React.FunctionComponent<TestComponentProps> = ({
-  name,
-}: TestComponentProps) => (
+const TestComponent = ({ name }: TestComponentProps): JSX.Element => (
   <>
     <div>Hello,{name}!</div>
   </>

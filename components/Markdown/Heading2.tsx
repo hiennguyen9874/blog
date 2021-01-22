@@ -5,9 +5,7 @@ interface Heading2Props {
   children: any;
 }
 
-const Heading2: React.FunctionComponent<Heading2Props> = ({
-  children,
-}: Heading2Props) => (
+const Heading2 = ({ children }: Heading2Props): JSX.Element => (
   <h2 className="font-bold text-3xl mt-6 mb-4 pb-2 border-b text-gray-700 border-gray-200 dark:border-gray-500 dark:text-gray-200">
     {children}
   </h2>

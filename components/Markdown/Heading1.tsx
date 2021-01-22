@@ -5,9 +5,7 @@ interface Heading1Props {
   children: any;
 }
 
-const Heading1: React.FunctionComponent<Heading1Props> = ({
-  children,
-}: Heading1Props) => (
+const Heading1 = ({ children }: Heading1Props): JSX.Element => (
   <h1 className="font-bold text-4xl mt-6 mb-4 pb-2 border-b text-gray-700 border-gray-200 dark:border-gray-500 dark:text-gray-200">
     {children}
   </h1>

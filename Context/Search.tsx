@@ -2,7 +2,6 @@ import React, {
   ReactChildren,
   ReactChild,
   createContext,
-  FunctionComponent,
   useReducer,
   useContext,
   Dispatch,
@@ -54,9 +53,7 @@ interface PropsSearchProvider {
   children: ReactChild | ReactChildren;
 }
 
-const SearchProvider: FunctionComponent<PropsSearchProvider> = ({
-  children,
-}: PropsSearchProvider) => {
+const SearchProvider = ({ children }: PropsSearchProvider): JSX.Element => {
   const [state, dispatch] = useReducer(searchReducer, initialSearch);
 
   return (

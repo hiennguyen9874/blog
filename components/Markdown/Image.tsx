@@ -5,10 +5,7 @@ interface CustomImageProps {
   alt: string;
 }
 
-const CustomImage: React.FunctionComponent<CustomImageProps> = ({
-  src,
-  alt,
-}: CustomImageProps) => (
+const CustomImage = ({ src, alt }: CustomImageProps): JSX.Element => (
   <div className="flex justify-center py-4">
     <img src={src} alt={alt} className="relative rounded-xl shadow-md" />
   </div>

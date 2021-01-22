@@ -8,10 +8,7 @@ interface SeoProps {
   description?: string;
 }
 
-const Seo: React.FunctionComponent<SeoProps> = ({
-  title,
-  description,
-}: SeoProps) => {
+const Seo = ({ title, description }: SeoProps): JSX.Element => {
   const siteMetadata = getSiteMetaData();
 
   const metaDescription = description || siteMetadata.description;

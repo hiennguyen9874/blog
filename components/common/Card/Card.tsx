@@ -16,7 +16,7 @@ interface CardProps {
   key: Key;
 }
 
-const Card: React.FunctionComponent<CardProps> = ({
+const Card = ({
   title,
   description,
   date,
@@ -26,7 +26,7 @@ const Card: React.FunctionComponent<CardProps> = ({
   tags,
   timeReading,
   key,
-}: CardProps) => {
+}: CardProps): JSX.Element => {
   const { author } = getSiteMetaData();
 
   return (

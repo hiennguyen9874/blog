@@ -5,9 +5,7 @@ interface TableCellBodyProps {
   children: any;
 }
 
-const TableCellBody: React.FunctionComponent<TableCellBodyProps> = ({
-  children,
-}: TableCellBodyProps) => (
+const TableCellBody = ({ children }: TableCellBodyProps): JSX.Element => (
   <td className="border px-4 py-2 border-gray-600">{children}</td>
 );
 

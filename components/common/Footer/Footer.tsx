@@ -4,7 +4,7 @@ import Link from 'next/link';
 import PublicImage from '@components/common/PublicImage';
 import { getSiteMetaData } from '@utils/helpers';
 
-const Footer: React.FunctionComponent = () => {
+const Footer = (): JSX.Element => {
   const { social } = getSiteMetaData();
   return (
     <footer className="mt-10 md:px-6 md:py-4 shadow bg-white dark:border-blueGray-700 dark:bg-blueGray-600">

@@ -11,11 +11,11 @@ interface PublicImage2Props {
   className: string;
 }
 
-const PublicImage2: React.FunctionComponent<PublicImage2Props> = ({
+const PublicImage2 = ({
   alt,
   src,
   className,
-}: PublicImage2Props) => {
+}: PublicImage2Props): JSX.Element => {
   const srcFormatted = src[0] === '/' ? src.slice(1) : src;
   return (
     <picture>

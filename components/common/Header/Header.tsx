@@ -6,7 +6,7 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 import Search from '../Search/Search';
 
-const Header: React.FunctionComponent = () => {
+const Header = (): JSX.Element => {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 

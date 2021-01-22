@@ -49,7 +49,10 @@ interface PostPageProps {
   slug: string;
 }
 
-const PostPage: NextPage<PostPageProps> = ({ posts, slug }: PostPageProps) => {
+const PostPage: NextPage<PostPageProps> = ({
+  posts,
+  slug,
+}: PostPageProps): JSX.Element => {
   const { frontmatter, post, previousPost, nextPost } = posts;
   const content = hydrate(post.source, { components: postComponents });
   return (

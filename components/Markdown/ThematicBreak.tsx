@@ -1,5 +1,5 @@
 import React from 'react';
 
-const ThematicBreakProps: React.FunctionComponent = () => <hr />;
+const ThematicBreakProps = (): JSX.Element => <hr />;
 
 export default ThematicBreakProps;

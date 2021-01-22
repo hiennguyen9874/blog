@@ -5,9 +5,7 @@ interface OrderedListProps {
   children: any;
 }
 
-const OrderedList: React.FunctionComponent<OrderedListProps> = ({
-  children,
-}: OrderedListProps) => (
+const OrderedList = ({ children }: OrderedListProps): JSX.Element => (
   <ol className="list-decimal list-inside px-8 space-y-1">{children}</ol>
 );
 

@@ -5,8 +5,8 @@ interface EmphasisProps {
   children: any;
 }
 
-const Emphasis: React.FunctionComponent<EmphasisProps> = ({
-  children,
-}: EmphasisProps) => <em className="italic">{children}</em>;
+const Emphasis = ({ children }: EmphasisProps): JSX.Element => (
+  <em className="italic">{children}</em>
+);
 
 export default Emphasis;

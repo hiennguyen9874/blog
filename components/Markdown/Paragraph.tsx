@@ -5,9 +5,7 @@ interface ParagraphProps {
   children: any;
 }
 
-const Paragraph: React.FunctionComponent<ParagraphProps> = ({
-  children,
-}: ParagraphProps) => (
+const Paragraph = ({ children }: ParagraphProps): JSX.Element => (
   <p className="mt-4 text-lg font-sans leading-7 text-justify mb-8 text-gray-600 dark:text-gray-200">
     {children}
   </p>

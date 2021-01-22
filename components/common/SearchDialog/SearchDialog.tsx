@@ -7,7 +7,7 @@ import { debounce } from 'lodash';
 import type { getAllSearchPost } from '@utils/posts';
 import { useSearch, SET_ON_SEARCH } from '@Context/Search';
 
-const SearchDialog: React.FunctionComponent = () => {
+const SearchDialog = (): JSX.Element => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<ReturnType<typeof getAllSearchPost>>(
