@@ -89,7 +89,7 @@ const PostPage: NextPage<PostPageProps> = ({
           </div>
         </header>
 
-        <div className="flex justify-between container mx-auto">
+        <div className="relative container flex flex-row justify-between mx-auto">
           <div className="w-full lg:w-8/12">
             <div className="px-4 py-1 shadow-sm bg-white rounded-xl dark:bg-gray-700">
               <main>{content}</main>
@@ -136,7 +136,7 @@ const PostPage: NextPage<PostPageProps> = ({
             </div>
           </div>
 
-          <div className="top-0 -mx-20 hidden lg:block w-4/12 h-full">
+          <div className="sticky top-10 -mx-20 hidden lg:block w-4/12 h-full">
             <div className="px-8 border-l-8 pl-6 dark:border-gray-700">
               <h2 className="mb-4 text-xl font-bold text-gray-700 dark:text-white">
                 Topics

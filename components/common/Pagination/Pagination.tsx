@@ -18,12 +18,19 @@ const Pagination = ({
       <div
         className={clsx(
           'w-1/3 flex flex-row items-center px-8 py-3 rounded-full',
-          page !== 1
+          page > 1
             ? 'bg-gray-200 text-gray-600 hover:bg-blue-600 hover:text-white dark:bg-gray-400 dark:hover:bg-blue-600'
             : '',
         )}
+        role={page > 1 ? 'button' : undefined}
+        tabIndex={page > 1 ? 0 : undefined}
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        onKeyPress={() => {}}
+        onClick={() => {
+          if (page - 1 >= 1) onChangePage(page - 1);
+        }}
       >
-        {page !== 1 && (
+        {page > 1 && (
           <>
             <div>
               <svg
@@ -50,12 +57,19 @@ const Pagination = ({
       <div
         className={clsx(
           'w-1/3 flex flex-row items-center px-8 py-3 rounded-full',
-          page !== numPage
+          page < numPage
             ? 'bg-gray-500 text-white hover:bg-blue-600 dark:bg-gray-100 dark:hover:bg-blue-600 dark:text-gray-600'
             : '',
         )}
+        role={page < numPage ? 'button' : undefined}
+        tabIndex={page < numPage ? 0 : undefined}
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        onKeyPress={() => {}}
+        onClick={() => {
+          if (page + 1 <= numPage) onChangePage(page + 1);
+        }}
       >
-        {page !== numPage && (
+        {page < numPage && (
           <>
             <div>Next</div>
             <div className="ml-4">
