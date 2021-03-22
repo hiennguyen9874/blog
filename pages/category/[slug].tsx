@@ -8,13 +8,18 @@ import {
   getPostsByCategory,
   FrontMatterType,
 } from 'utils/posts';
+
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   if (typeof slug === 'string') {
-    const categories = await getPostsCategories();
     return {
       props: {
-        posts: await getPostsByCategory(slug),
-        categories: categories.map(({ params }) => params.slug),
+        posts: (await getPostsByCategory(slug)).map((item) => ({
+          slugPerPost: item.slug,
+          frontmatter: item.frontmatter,
+        })),
+        categories: (await getPostsCategories()).map(
+          ({ params }) => params.slug,
+        ),
         slug,
       },
     };
@@ -31,7 +36,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 interface CategoryPageProps {
-  posts: FrontMatterType[];
+  posts: {
+    slugPerPost: string;
+    frontmatter: FrontMatterType;
+  }[];
   categories: string[];
   slug: string;
 }
@@ -58,33 +66,24 @@ const CategoryPage = ({
               <div className="mt-12">
                 {posts
                   .slice(currentPage - 1, currentPage + 9)
-                  .map(
-                    ({
-                      title,
-                      description,
-                      date,
-                      thumbnail,
-                      tag,
-                      timeReading,
-                    }) => (
-                      <div
-                        key={slug}
-                        className="mt-6 hover:-translate-y-1 active:translate-y-0"
-                      >
-                        <Card
-                          title={title}
-                          description={description}
-                          date={date}
-                          thumbnail={thumbnail}
-                          hrefPost="/post/[slug]"
-                          asPost={`/post/${slug}`}
-                          tags={tag}
-                          timeReading={timeReading}
-                          key={slug}
-                        />
-                      </div>
-                    ),
-                  )}
+                  .map(({ slugPerPost, frontmatter }) => (
+                    <div
+                      key={slugPerPost}
+                      className="mt-6 hover:-translate-y-1 active:translate-y-0"
+                    >
+                      <Card
+                        title={frontmatter.title}
+                        description={frontmatter.description}
+                        date={frontmatter.date}
+                        thumbnail={frontmatter.thumbnail}
+                        hrefPost="/post/[slug]"
+                        asPost={`/post/${slugPerPost}`}
+                        tags={frontmatter.tag}
+                        timeReading={frontmatter.timeReading}
+                        key={slugPerPost}
+                      />
+                    </div>
+                  ))}
               </div>
             </div>
             <div className="sticky top-10 -mx-20 w-4/12 pr-40 hidden lg:block h-full">

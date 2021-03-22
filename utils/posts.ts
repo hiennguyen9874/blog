@@ -116,7 +116,7 @@ export const getSortedPosts = async (): Promise<Array<PostType>> => {
       const frontmatter = getFrontMatter(data);
 
       // Remove .mdx file extension from post name
-      const slug = filename.replace('.mdx', '');
+      const slug = encodeURIComponent(filename.replace('.mdx', ''));
 
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { date, ...otherData } = data;
@@ -163,7 +163,7 @@ export const getAllSearchPost = (): Array<{
     const frontmatter = getFrontMatter(data);
 
     // Remove .mdx file extension from post name
-    const slug = filename.replace('.mdx', '');
+    const slug = encodeURIComponent(filename.replace('.mdx', ''));
 
     return {
       slug,
@@ -253,7 +253,7 @@ export const getPostsCategories = async (): Promise<
       const frontmatter = getFrontMatter(data);
 
       // Remove .mdx file extension from post name
-      const slug = filename.replace('.mdx', '');
+      const slug = encodeURIComponent(filename.replace('.mdx', ''));
 
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { date, ...otherData } = data;
@@ -298,10 +298,18 @@ export const getPostsCategories = async (): Promise<
 
 export const getPostsByCategory = async (
   category: string,
-): Promise<FrontMatterType[]> => {
+): Promise<
+  {
+    slug: string;
+    frontmatter: FrontMatterType;
+  }[]
+> => {
   const posts = await getSortedPosts();
 
   return posts
     .filter((value) => value.frontmatter.tag.includes(category))
-    .map(({ frontmatter }) => frontmatter);
+    .map(({ frontmatter, slug }) => ({
+      slug,
+      frontmatter,
+    }));
 };
