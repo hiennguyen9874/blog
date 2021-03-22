@@ -75,8 +75,11 @@ const getPostsFolders = (): Array<{
 
 // Get day in format: Month day, Year. e.g. April 19, 2020
 const getFormattedDate = (date: Date): string => {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  const formattedDate = date.toLocaleDateString('en-US', options);
+  const formattedDate = date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   return formattedDate;
 };
@@ -227,4 +230,78 @@ export const getPostBySlug = async (slug: string): Promise<PostDataType> => {
     previousPost,
     nextPost,
   };
+};
+
+export const getPostsCategories = async (): Promise<
+  {
+    params: {
+      slug: string;
+    };
+  }[]
+> => {
+  const postFolders = getPostsFolders();
+
+  const posts = await Promise.all(
+    postFolders.map(async ({ filename, directory }) => {
+      const markdownWithMetadata = fs
+        .readFileSync(`content/posts/${directory}/${filename}`)
+        .toString();
+
+      // Parse markdown, get frontmatter data, excerpt and content.
+      const { content, data, excerpt } = matter(markdownWithMetadata);
+
+      const frontmatter = getFrontMatter(data);
+
+      // Remove .mdx file extension from post name
+      const slug = filename.replace('.mdx', '');
+
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { date, ...otherData } = data;
+
+      const mdxSource = await renderToString(content, {
+        components: postComponents,
+        mdxOptions: {
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+        },
+        scope: otherData,
+      });
+
+      return {
+        slug,
+        frontmatter,
+        excerpt,
+        content,
+        source: mdxSource,
+      };
+    }),
+  );
+
+  let listTag: string[] = [];
+
+  posts.forEach((item) => {
+    item.frontmatter.tag.forEach((tag) => {
+      if (!listTag.includes(tag)) {
+        listTag.push(tag);
+      }
+    });
+  });
+
+  listTag = listTag.sort();
+
+  return listTag.map((tag) => ({
+    params: {
+      slug: tag,
+    },
+  }));
+};
+
+export const getPostsByCategory = async (
+  category: string,
+): Promise<FrontMatterType[]> => {
+  const posts = await getSortedPosts();
+
+  return posts
+    .filter((value) => value.frontmatter.tag.includes(category))
+    .map(({ frontmatter }) => frontmatter);
 };
