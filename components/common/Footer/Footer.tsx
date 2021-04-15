@@ -95,7 +95,7 @@ const Footer = (): JSX.Element => {
               src: '/assets/img/linkedin.svg?lqip',
               url: social.linkedin.link,
             },
-          ].map(({ label, src, url }) => (
+          ].map(({ label, url }) => (
             <div className="block" key={`${label}_${url}`}>
               <h1>
                 <Link href={url}>

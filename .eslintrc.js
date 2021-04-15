@@ -41,9 +41,7 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
-    'prettier/react',
     'plugin:jsx-a11y/recommended',
-    'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
   plugins: [

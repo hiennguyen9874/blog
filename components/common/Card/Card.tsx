@@ -1,4 +1,4 @@
-import React, { Key } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 import PublicImage from '@components/common/PublicImage';
@@ -25,8 +25,8 @@ const Card = ({
   thumbnail,
   tags,
   timeReading,
-  // key,
-}: CardProps): JSX.Element => {
+}: // key,
+CardProps): JSX.Element => {
   const { author } = getSiteMetaData();
 
   return (

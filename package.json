@@ -10,8 +10,6 @@
     "check:type": "tsc  --project tsconfig.json -pretty --noEmit",
     "lint:es": "eslint . --ext ts,tsx,js",
     "lint:fix": "eslint . --ext ts,tsx,js --fix",
-    "lint:style": "stylelint 'src/**/styled.ts' 'src/**/*.tsx'",
-    "lint": "yarn lint:es && yarn lint:style",
     "format": "prettier --write .",
     "cache": "node scripts/cache.js",
     "analyze": "cross-env ANALYZE=true next build",
@@ -20,15 +18,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run cache && yarn lint-staged && yarn check:type"
+      "pre-commit": "yarn run cache && lint-staged"
     }
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "eslint --cache"
-    ],
-    "styled.ts": [
-      "stylelint --cache"
+      "prettier --write",
+      "eslint --fix"
     ]
   },
   "dependencies": {
