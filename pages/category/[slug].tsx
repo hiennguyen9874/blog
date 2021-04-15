@@ -72,6 +72,7 @@ const CategoryPage = ({
                       className="mt-6 hover:-translate-y-1 active:translate-y-0"
                     >
                       <Card
+                        key={slugPerPost}
                         title={frontmatter.title}
                         description={frontmatter.description}
                         date={frontmatter.date}
@@ -80,7 +81,6 @@ const CategoryPage = ({
                         asPost={`/post/${slugPerPost}`}
                         tags={frontmatter.tag}
                         timeReading={frontmatter.timeReading}
-                        key={slugPerPost}
                       />
                     </div>
                   ))}

@@ -6,8 +6,9 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+  mode: 'jit',
   purge: {
-    mode: 'all',
+    enabled: true,
     content: [
       './components/**/*.{js,ts,jsx,tsx,css}',
       './pages/**/*.{js,ts,jsx,tsx}',

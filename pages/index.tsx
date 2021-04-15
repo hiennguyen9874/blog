@@ -58,6 +58,7 @@ const Index: NextPage<IndexProps> = ({ posts, categories }: IndexProps) => {
                         className="mt-6 hover:-translate-y-1 active:translate-y-0"
                       >
                         <Card
+                          key={slug}
                           title={title}
                           description={description}
                           date={date}
@@ -66,7 +67,6 @@ const Index: NextPage<IndexProps> = ({ posts, categories }: IndexProps) => {
                           asPost={`/post/${slug}`}
                           tags={tag}
                           timeReading={timeReading}
-                          key={slug}
                         />
                       </div>
                     ),

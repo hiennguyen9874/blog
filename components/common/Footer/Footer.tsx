@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 
-import PublicImage from '@components/common/PublicImage';
+// import PublicImage from '@components/common/PublicImage';
+// import PublicImage2 from '@components/common/PublicImage2';
 import { getSiteMetaData } from '@utils/helpers';
 
 const Footer = (): JSX.Element => {
@@ -81,17 +82,17 @@ const Footer = (): JSX.Element => {
           {[
             {
               label: 'Facebook',
-              src: 'assets/img/facebook.svg',
+              src: '/assets/img/facebook.svg?webp',
               url: social.facebook.link,
             },
             {
               label: 'Github',
-              src: 'assets/img/github.svg',
+              src: '/assets/img/github.svg?webp',
               url: social.github.link,
             },
             {
               label: 'Linkedin',
-              src: 'assets/img/linkedin.svg',
+              src: '/assets/img/linkedin.svg?lqip',
               url: social.linkedin.link,
             },
           ].map(({ label, src, url }) => (
@@ -100,13 +101,13 @@ const Footer = (): JSX.Element => {
                 <Link href={url}>
                   <a className="flex text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500 hover:no-underline">
                     <div className="flex space-x-1">
-                      <PublicImage
+                      {/* <PublicImage
                         className="inline-block"
                         src={src}
+                        alt={label}
                         width={20}
                         height={20}
-                        alt={label}
-                      />
+                      /> */}
                       <div className="inline-block">{label}</div>
                     </div>
                   </a>

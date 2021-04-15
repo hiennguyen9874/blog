@@ -19,7 +19,7 @@ const Bio = ({ className }: BioProps): JSX.Element => {
       <div className="mb-0 mr-3">
         <PublicImage
           className="flex-shrink-0 rounded-full w-14 h-14"
-          src="assets/img/profile.jpg"
+          src="/assets/img/profile.jpg"
           width={54}
           height={54}
           alt="Profile"

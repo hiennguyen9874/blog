@@ -14,16 +14,22 @@ module.exports = withPlugins(
         responsive: {
           adapter: require('responsive-loader/sharp'),
         },
+        handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif', 'ico'],
+
       },
     ],
   ],
   {
+    future: {
+      webpack5: true,
+    },
     webpack: (config, { isServer }) => {
       // Fixes npm packages that depend on `fs` module
       if (!isServer) {
-        config.node = {
-          fs: 'empty',
-        };
+        config.resolve.fallback.fs = false;
+        // config.node = {
+        //   fs: 'empty',
+        // };
       }
 
       // import svg file as component

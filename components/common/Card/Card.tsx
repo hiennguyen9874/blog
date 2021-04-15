@@ -13,7 +13,7 @@ interface CardProps {
   thumbnail: string;
   tags: string[];
   timeReading?: number;
-  key: Key;
+  // key: Key;
 }
 
 const Card = ({
@@ -25,13 +25,13 @@ const Card = ({
   thumbnail,
   tags,
   timeReading,
-  key,
+  // key,
 }: CardProps): JSX.Element => {
   const { author } = getSiteMetaData();
 
   return (
     <div
-      key={key}
+      // key={key}
       className="transform duration-300 group container hover:-translate-y-2 active:translate-y-0 max-w-4xl rounded-xl shadow-sm hover:shadow-lg overflow-hidden md:max-w-4xl bg-white dark:bg-gray-700 active:translate-y-0"
     >
       <div className="flex items-stretch container mx-auto justify-between">
@@ -87,7 +87,7 @@ const Card = ({
                   <a>
                     <PublicImage
                       className="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
-                      src="assets/img/profile.jpg"
+                      src="/assets/img/profile.jpg"
                       width={40}
                       height={40}
                       alt="avatar"
