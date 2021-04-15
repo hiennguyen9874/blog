@@ -1,7 +1,9 @@
 import React from 'react';
 import { NextPage } from 'next';
 
-import { Layout, Seo, PublicImage2 } from '@components/common';
+import { PublicImage2 } from '@components/common';
+import Layout from '@components/Layout';
+import Seo from '@components/Seo';
 
 const AboutMePage: NextPage = () => (
   <Layout>

@@ -3,7 +3,11 @@ import { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import hydrate from 'next-mdx-remote/hydrate';
 
-import { Bio, Layout, Seo, Comments } from '@components/common';
+import Bio from '@components/Bio';
+import Comments from '@components/Comments';
+import Layout from '@components/Layout';
+import Seo from '@components/Seo';
+import Categories from '@components/RightBar/Categories';
 import {
   getPostBySlug,
   getPostsSlugs,
@@ -140,23 +144,14 @@ const PostPage: NextPage<PostPageProps> = ({
             </div>
           </div>
 
-          <div className="sticky top-10 -mx-20 w-4/12 pr-40 hidden lg:block h-full">
+          <div className="sticky top-10 -mx-20 w-4/12 pr-10 hidden lg:block h-full">
             <div className="px-8 border-l-8 pl-6 dark:border-gray-700">
               <h2 className="mb-4 text-xl font-bold text-gray-700 dark:text-white">
                 Categories
               </h2>
             </div>
-            <div className="px-2 rounded-lg">
-              {categories.map((category) => (
-                <div className="mx-2 my-4 rounded-lg">
-                  <Link href="/category/[slug]" as={`/category/${category}`}>
-                    <a className="px-1 pb-0.5 pt-0 font-normal text-md items-center rounded-md bg-gray-400 text-gray-100 dark:hover:bg-gray-400 dark:bg-gray-600 dark:text-white hover:bg-gray-600 hover:no-underline">
-                      {category}
-                    </a>
-                  </Link>
-                </div>
-              ))}
-            </div>
+
+            <Categories categories={categories} />
           </div>
         </div>
       </div>

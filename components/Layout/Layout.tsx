@@ -2,10 +2,9 @@ import React, { useEffect } from 'react';
 import clsx from 'clsx';
 
 import { useSearchState } from '@Context/Search';
-
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import SearchDialog from '../SearchDialog/SearchDialog';
+import Header from '@components/Header/Header';
+import Footer from '@components/Footer/Footer';
+import SearchDialog from '@components/SearchDialog/SearchDialog';
 
 interface LayoutProps {
   children: React.ReactNode;
