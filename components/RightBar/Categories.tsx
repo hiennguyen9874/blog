@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import * as _ from 'lodash';
+import chunk from 'lodash/chunk';
 
 interface CategoriesProps {
   categories: string[];
@@ -9,7 +9,7 @@ interface CategoriesProps {
 const Categories = ({ categories }: CategoriesProps): JSX.Element => {
   return (
     <div className="px-6 mt-10 py-4 rounded-2xl bg-white dark:border-gray-700 dark:bg-gray-700">
-      {_.chunk(categories, 2).map((twoElement) => (
+      {chunk(categories, 2).map((twoElement) => (
         <div className="mx-4 my-4 flex flex-row" key={twoElement.join(',')}>
           {twoElement.map((category) => (
             <>

@@ -11,6 +11,7 @@ import 'typeface-merriweather';
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
   <ThemeProvider defaultTheme="system" enableSystem attribute="class">
     <ContextProvider>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
     </ContextProvider>
   </ThemeProvider>

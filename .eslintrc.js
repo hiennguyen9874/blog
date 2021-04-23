@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
@@ -9,29 +10,43 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: './tsconfig.eslint.json',
   },
+  env: {
+    es6: true,
+    browser: true,
+    jest: true,
+    node: true,
+  },
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+
   settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.js', '.jsx', '.ts', '.tsx'],
-    },
     react: {
       version: 'detect',
     },
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.js', '.jsx', '.ts', '.tsx'],
+    },
     'import/resolver': {
       typescript: {
         project: './tsconfig.eslint.json',
-      },
+      }, // this loads <rootdir>/tsconfig.json to eslint
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
         moduleDirectory: ['node_modules', './'],
       },
     },
   },
-  env: {
-    es6: true,
-    browser: true,
-    node: true,
-  },
+  plugins: [
+    'import',
+    'react',
+    'react-hooks',
+    '@typescript-eslint',
+    'eslint-plugin-prettier',
+    'simple-import-sort',
+  ],
   extends: [
     'eslint:recommended',
     'airbnb',
@@ -44,32 +59,44 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: [
-    'import',
-    'react',
-    'react-hooks',
-    '@typescript-eslint',
-    'eslint-plugin-prettier',
-    'simple-import-sort',
-  ],
   rules: {
-    'import/no-unresolved': 'error', // turn on errors for missing imports
-    'react/jsx-filename-extension': [0, { extensions: ['.tsx'] }],
-    'react/react-in-jsx-scope': 'off',
-    'react/jsx-props-no-spreading': [
-      0,
-      { html: 'ignore', custom: 'ignore', explicitSpread: 'ignore' },
-    ],
-    'jsx-a11y/anchor-is-valid': [
+    // 'react' was used before it was defined
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error', { variables: false }],
+    // Missing file extension "ts" for ...
+    'import/extensions': [
       'error',
+      'ignorePackages',
       {
-        components: ['Link'],
-        specialLink: ['hrefLeft', 'hrefRight'],
-        aspects: ['invalidHref', 'preferButton'],
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
     ],
-    'no-use-before-define': 0,
-    '@typescript-eslint/no-use-before-define': 2,
+    // JSX not allowed in files with extension '.tsx'
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.jsx', '.tsx'] },
+    ],
+    // Promises must be handled appropriately or explicitly marked as ignored with the `void` operator
+    '@typescript-eslint/no-floating-promises': 'off',
+    // is already declared in the upper scope
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
+    // Use our .prettierrc file as source
+    'prettier/prettier': ['warn', {}, { usePrettierrc: true }],
+    // Disallow usage of the any type
+    '@typescript-eslint/no-explicit-any': ['error', { ignoreRestArgs: true }],
+    // Prevent import all library
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: ['lodash'],
+      },
+    ],
+    // turn on errors for missing imports
+    'import/no-unresolved': 'error',
     'import/order': [
       2,
       {
@@ -85,16 +112,13 @@ module.exports = {
       },
     ],
     'import/newline-after-import': 1,
-    'import/extensions': [
+    'jsx-a11y/anchor-is-valid': [
       'error',
-      'ignorePackages',
       {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton'],
       },
     ],
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Use our .prettierrc file as source
   },
 };

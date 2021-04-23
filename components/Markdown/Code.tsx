@@ -14,11 +14,13 @@ interface CodeBlockProps {
 }
 
 const CodeBlock = (props: CodeBlockProps): JSX.Element => {
-  const className = props.children.props.className || '';
-  const matches = className.match(/language-(?<lang>.*)/);
+  const matches = (props.children.props.className || '').match(
+    /language-(?<lang>.*)/,
+  );
 
   return (
     <Highlight
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...defaultProps}
       theme={dracula}
       code={props.children.props.children}
@@ -40,23 +42,24 @@ const CodeBlock = (props: CodeBlockProps): JSX.Element => {
             if (i < tokens.length - 1) {
               const { className, ...rest } = getLineProps({ line, key: i });
               return (
-                // eslint-disable-next-line react/no-array-index-key
+                // eslint-disable-next-line react/no-array-index-key, react/jsx-props-no-spreading
                 <div key={i} className={clsx('table-row', className)} {...rest}>
                   <span className="table-cell text-right pr-4 select-none opacity-50">
                     {i + 1}|
                   </span>
                   <span className="table-cell">
                     {line.map((token, key) => (
-                      // eslint-disable-next-line react/no-array-index-key
+                      // eslint-disable-next-line react/no-array-index-key, react/jsx-props-no-spreading
                       <span key={key} {...getTokenProps({ token, key })} />
                     ))}
                   </span>
                 </div>
               );
             }
+            // eslint-disable-next-line @typescript-eslint/no-shadow
             const { className, ...rest } = getLineProps({ line, key: i });
             return (
-              // eslint-disable-next-line react/no-array-index-key
+              // eslint-disable-next-line react/no-array-index-key, react/jsx-props-no-spreading
               <div key={i} className={clsx('table-row', className)} {...rest} />
             );
           })}

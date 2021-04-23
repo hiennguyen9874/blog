@@ -2,7 +2,7 @@ import React, { useRef, useState, KeyboardEvent, useEffect } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import axios from 'axios';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 
 import type { getAllSearchPost } from '@utils/posts';
 import { useSearch, SET_ON_SEARCH } from '@Context/Search';
