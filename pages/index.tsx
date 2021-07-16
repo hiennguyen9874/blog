@@ -33,7 +33,7 @@ const Index: NextPage<IndexProps> = ({ posts, categories }: IndexProps) => {
     <>
       <Layout>
         <Seo title="Home" />
-        <div className="mt-4 py-2 md:py-8">
+        <div className="py-2 md:py-8">
           <div className="relative container flex flex-row justify-between mx-auto">
             <div className="w-full lg:w-8/12">
               <div className="flex items-center justify-between">

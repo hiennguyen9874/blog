@@ -25,12 +25,21 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
     <div>
       <SearchDialog />
       <div className={clsx('', onSearching ? 'opacity-30' : '')}>
-        <div className="w-full min-h-screen bg-gray-100 dark:bg-blueGray-800 dark:text-white">
-          <Header />
-          <div className="max-w-screen-xl px-4 md:px-24 mx-auto antialiased font-body">
-            <main>{children}</main>
-          </div>
-          <Footer />
+        <div className="flex flex-col min-h-screen h-full w-full bg-gray-100 dark:bg-blueGray-800 dark:text-white">
+          <header>
+            <Header />
+          </header>
+          <main
+            className="flex-grow max-w-screen-xl mt-4 mb-auto px-4 md:px-24 mx-auto antialiased font-body"
+            style={{
+              flexGrow: 1,
+            }}
+          >
+            {children}
+          </main>
+          <footer>
+            <Footer />
+          </footer>
         </div>
       </div>
     </div>

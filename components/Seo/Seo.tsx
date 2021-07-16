@@ -16,7 +16,7 @@ const Seo = ({ title, description }: SeoProps): JSX.Element => {
   return (
     <Head>
       <title>
-        {title} |{siteMetadata.title}
+        {title} | {siteMetadata.title}
       </title>
       <meta name="description" content={metaDescription} />
       <meta property="og:type" content="website" />

@@ -25,10 +25,10 @@ const Header = (): JSX.Element => {
   const isDarkMode = resolvedTheme === 'dark';
 
   return (
-    <nav className=" px-6 py-4 shadow bg-white dark:border-blueGray-700 dark:bg-blueGray-600">
+    <nav className="px-6 py-4 shadow bg-white dark:border-blueGray-700 dark:bg-blueGray-600">
       <div className="max-w-screen-xl md:px-24 mx-auto antialiased font-body">
         <div className="flex flex-col container mx-auto md:flex-row md:items-center md:justify-between">
-          <div className="">
+          <div>
             <h1>
               <Link href="/">
                 <a className="text-3xl font-bold md:text-4xl hover:no-underline text-gray-800 dark:text-gray-200 ">

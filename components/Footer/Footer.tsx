@@ -8,7 +8,7 @@ import { getSiteMetaData } from '@utils/helpers';
 const Footer = (): JSX.Element => {
   const { social } = getSiteMetaData();
   return (
-    <footer className="mt-10 md:px-6 md:py-4 shadow bg-white dark:border-blueGray-700 dark:bg-blueGray-600">
+    <div className="md:px-6 md:py-4 shadow bg-white dark:border-blueGray-700 dark:bg-blueGray-600">
       <div className="max-w-screen-xl container flex flex-col mx-auto md:px-24 md:flex-row items-center justify-between">
         <div className="text-lg font-light">
           © {new Date().getFullYear()}, Built with{' '}
@@ -139,7 +139,7 @@ const Footer = (): JSX.Element => {
           ))}
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 
