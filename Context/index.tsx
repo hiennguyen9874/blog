@@ -1,4 +1,4 @@
-import React, { ReactChild, ReactChildren } from 'react';
+import { ReactChild, ReactChildren } from 'react';
 
 import { SearchProvider } from './Search';
 

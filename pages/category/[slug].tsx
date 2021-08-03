@@ -56,8 +56,9 @@ const CategoryPage = ({
 
   return (
     <>
+      <Seo title="Categories" />
+
       <Layout>
-        <Seo title="Categories" />
         <div className="mt-4 py-2 md:py-8">
           <div className="relative container flex flex-row justify-between mx-auto">
             <div className="w-full lg:w-8/12">
