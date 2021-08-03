@@ -1,4 +1,3 @@
-import React from 'react';
 import { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import hydrate from 'next-mdx-remote/hydrate';

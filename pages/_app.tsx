@@ -1,4 +1,3 @@
-import React from 'react';
 import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 

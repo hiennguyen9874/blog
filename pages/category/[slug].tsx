@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { Card } from '@components/common';
@@ -52,7 +52,7 @@ const CategoryPage = ({
   slug,
   categories,
 }: CategoryPageProps): JSX.Element => {
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   return (
     <>

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import { useState } from 'react';
 import { GetStaticPropsResult, NextPage } from 'next';
 
 import Seo from '@components/Seo';
@@ -27,7 +27,7 @@ export async function getStaticProps(): Promise<
 }
 
 const Index: NextPage<IndexProps> = ({ posts, categories }: IndexProps) => {
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   return (
     <>
