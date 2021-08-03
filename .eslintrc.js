@@ -120,5 +120,22 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
+    // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/no-empty-function': ['warn'],
+    // Disable devDependencies for storybook
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '.storybook/**',
+          'src/stories/**',
+          '**/*.stories.tsx',
+        ],
+      },
+    ],
+    // Disable require default export
+    'import/prefer-default-export': 'off',
   },
 };

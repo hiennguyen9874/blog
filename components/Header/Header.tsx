@@ -25,61 +25,53 @@ const Header = (): JSX.Element => {
   const isDarkMode = resolvedTheme === 'dark';
 
   return (
-    <nav className="px-6 py-4 shadow bg-white dark:border-blueGray-700 dark:bg-blueGray-600">
-      <div className="max-w-screen-xl md:px-24 mx-auto antialiased font-body">
-        <div className="flex flex-col container mx-auto md:flex-row md:items-center md:justify-between">
-          <div>
+    <nav className="py-8 flex flex-col md:flex-row md:items-center md:justify-between">
+      <Link href="/">
+        <a className="text-3xl font-bold md:text-4xl hover:no-underline text-gray-800 dark:text-gray-200">
+          Blog
+        </a>
+      </Link>
+
+      <div className="hidden lg:block">
+        <Search />
+      </div>
+
+      <div className="hidden md:flex flex-row items-center font-semibold text-omega-dark dark:text-gray-200">
+        {[
+          {
+            label: 'Home',
+            url: '/',
+          },
+          {
+            label: 'About Me',
+            url: '/aboutme',
+          },
+          {
+            label: 'Contact',
+            url: '#',
+          },
+        ].map(({ label, url }) => (
+          <div className="my-1 md:mx-4 md:my-0" key={url}>
             <h1>
-              <Link href="/">
-                <a className="text-3xl font-bold md:text-4xl hover:no-underline text-gray-800 dark:text-gray-200 ">
-                  Blog
+              <Link href={url}>
+                <a className="hover:no-underline hover:text-blue-500 dark:hover:text-blue-500 ">
+                  {label}
                 </a>
               </Link>
             </h1>
           </div>
+        ))}
 
-          <div>
-            <Search />
-          </div>
-
-          <div className="flex-col md:flex md:flex-row md:-mx-4 hidden">
-            {[
-              {
-                label: 'Home',
-                url: '/',
-              },
-              {
-                label: 'About Me',
-                url: '/aboutme',
-              },
-              {
-                label: 'Contact',
-                url: '#',
-              },
-            ].map(({ label, url }) => (
-              <div className="my-1 md:mx-4 md:my-0" key={url}>
-                <h1>
-                  <Link href={url}>
-                    <a className="text-gray-800 font-semibold hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500 hover:no-underline">
-                      {label}
-                    </a>
-                  </Link>
-                </h1>
-              </div>
-            ))}
-
-            {mounted && (
-              <div className="my-1 md:mx-4 md:my-0">
-                <DarkModeSwitch
-                  checked={isDarkMode}
-                  onChange={toggleDarkMode}
-                  className={isRoot ? '28' : '24'}
-                  size={20}
-                />
-              </div>
-            )}
-          </div>
-        </div>
+        {mounted && (
+          <DarkModeSwitch
+            checked={isDarkMode}
+            onChange={toggleDarkMode}
+            className={isRoot ? '28' : '24'}
+            size={20}
+            sunColor="#718096"
+            moonColor="#fff"
+          />
+        )}
       </div>
     </nav>
   );
