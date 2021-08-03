@@ -1,4 +1,3 @@
-import React from 'react';
 import { DiscussionEmbed } from 'disqus-react';
 
 import { getDisqusData } from '@utils/helpers';

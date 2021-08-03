@@ -1,7 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React from 'react';
 import Image from 'next/image';
 
 interface CustomImageProps {

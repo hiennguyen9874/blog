@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable global-require */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React from 'react';
 import clsx from 'clsx';
 
 import PublicImage from '@components/common/PublicImage';

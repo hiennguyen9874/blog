@@ -1,4 +1,5 @@
-import React, { useRef, useState, KeyboardEvent, useEffect } from 'react';
+import { useRef, useState, KeyboardEvent, useEffect } from 'react';
+import * as React from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import axios from 'axios';

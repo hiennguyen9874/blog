@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useSearchDispatch, SET_ON_SEARCH } from '@Context/Search';
 
 import './Search.module.scss';

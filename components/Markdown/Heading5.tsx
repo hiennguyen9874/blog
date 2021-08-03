@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface Heading5Props {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;
